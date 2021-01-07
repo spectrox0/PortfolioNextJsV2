@@ -26,7 +26,7 @@ import { GiArtificialIntelligence } from 'react-icons/gi'
 import styled from 'styled-components'
 import { device, primaryColor } from '../../helpers/styles'
 import PerfectScroll from 'react-perfect-scrollbar'
-import { motion, CustomValueType } from 'framer-motion'
+import { motion } from 'framer-motion'
 interface skill {
   name: string,
   icon: React.ReactElement,
@@ -234,7 +234,6 @@ const SkillS = styled(motion.section)`
   width: 100%;
   background-color: rgba(10, 10, 10, 0.7);
   transform: translate3d(100%, 0, 0);
-  padding: 0;
   overflow-y: auto;
   &::-webkit-scrollbar {
     width: 0.7em;

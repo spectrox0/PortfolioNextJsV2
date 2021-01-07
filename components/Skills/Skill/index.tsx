@@ -24,20 +24,6 @@ export default function Skill({ delay, name, progress, icon }: Props) {
       },
     },
   }
-  const VariantCircle = {
-    initial: {
-      left: 0,
-      opacity: 0,
-    },
-    enter: {
-      opacity: 1,
-      left: `${progress}%`,
-      transition: {
-        duration: 1,
-        delay: delay,
-      },
-    },
-  }
   const VariantSkill = {
     initial: {
       opacity: 0,
@@ -58,8 +44,8 @@ export default function Skill({ delay, name, progress, icon }: Props) {
       </span>
 
       <div className="line">
-        <motion.div variants={VariantCircle} className="circle" />
-        <motion.div variants={VariantLine} className="line-progress" />
+        <motion.div variants={VariantLine} className="line-progress" >
+        </motion.div>
       </div>
     </SkillS>
   )
@@ -111,22 +97,25 @@ const SkillS = styled(motion.div)`
     width: 100%;
     height: 0.2em;
     background: rgba(255, 255, 255, 0.5);
-
-    .circle {
-      height: 1em;
-      border-radius: 50%;
-      position: absolute;
-      width: 1em;
-      transform: translate3d(0, 0, 0);
-      background: ${primaryColor};
-      left: 0;
-    }
     .line-progress {
-      position: absolute;
       transform: translate3d(0, 0, 0);
+      overflow: visible;
       background: ${primaryColor};
-      width: 0;
+      width: 10rem;
       height: 0.2em;
+      position: relative;
+      opacity: 0;
+      &:after{
+        content:"";
+        position: absolute;
+        height: 1em;
+        border-radius: 50%;
+        width: 1em;
+        transform: translate3d(0, -50%, 0);
+        background: ${primaryColor};
+        right: 0;
+        top: 50%;
+      }
     }
   }
 `

@@ -7,7 +7,7 @@ interface Props {
   children?: React.ReactElement[]
 }
 
-const bg: string = require('images/bg/bg9.jpg?webp');
+const bg: string = require('images/bg/bg8.jpg?webp');
 
 export default function Layout({ children }: Props) {
 

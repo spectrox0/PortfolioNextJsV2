@@ -363,12 +363,31 @@ const AboutMeStyle = styled(motion.section)`
       z-index:-1;
       width: 100%;
       height: 100%;
-      border: 1px solid transparent;
+      border: 3px solid transparent;
       transform: translate3d(0, 0, 0) rotate(225deg) scale(0);
       border-left-color: ${primaryColor};
       border-right-color: ${primaryColor};
     }
+    &:before {
+            content: '';
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            opacity: .5;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            transform: translate3d(0, 0, 0)  scale(.96);
+            border-top-color:#fff;
+            border-bottom-color: #fff;
+      }
     &.active {
+      img {
+        opacity: 1;
+      }
       &:after {
         animation: ${InputAnimationImg} 0.8s ease-in-out 0.3s forwards;
       }
@@ -382,7 +401,9 @@ const AboutMeStyle = styled(motion.section)`
     border-radius: 50%;
     &:nth-child(2) {
       position: absolute;
+      opacity: 0;
       padding: 1rem;
+      transition: opacity 1s ease-in-out;
       top: 0;
       left: 0;
     }
