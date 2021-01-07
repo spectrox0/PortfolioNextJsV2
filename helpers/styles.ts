@@ -1,8 +1,16 @@
 export const primaryColor = '#ff616f'
 export const grayColor = '#bdbdbd'
 
-
-const size = {
+interface size {
+  mobileS: string,
+  mobileM: string,
+  mobileL: string,
+  tablet: string,
+  laptop: string,
+  laptopL: string,
+  desktop: string,
+}
+const sizes: size = {
   mobileS: '320px',
   mobileM: '375px',
   mobileL: '425px',
@@ -12,12 +20,12 @@ const size = {
   desktop: '2560px',
 }
 
-export const device = {
-  mobileS: `(max-width: ${size.mobileS})`,
-  mobileM: `(max-width: ${size.mobileM})`,
-  mobileL: `(max-width: ${size.mobileL})`,
-  tablet: `(max-width: ${size.tablet})`,
-  laptop: `(max-width: ${size.laptop})`,
-  laptopL: `(max-width: ${size.laptopL})`,
-  desktop: `(max-width: ${size.desktop})`,
+export const device: size = {
+  mobileS: `(max-width: ${sizes.mobileS})`,
+  mobileM: `(max-width: ${sizes.mobileM})`,
+  mobileL: `(max-width: ${sizes.mobileL})`,
+  tablet: `(max-width: ${sizes.tablet})`,
+  laptop: `(max-width: ${sizes.laptop})`,
+  laptopL: `(max-width: ${sizes.laptopL})`,
+  desktop: `(max-width: ${sizes.desktop})`,
 }
