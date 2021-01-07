@@ -26,13 +26,10 @@
     height: 100%;
     padding: 0;
     margin-left: 5rem;
-
+    z-index: 2;
     @media (max-width: 768px) {
-      font-size: 0.9em;
       margin-left: 0;
     }
-    @media (max-width: 425px) {
-      font-size: 0.8em;
-    }
+
   }
 }

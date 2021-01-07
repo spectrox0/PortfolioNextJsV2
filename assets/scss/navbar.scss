@@ -9,10 +9,12 @@ nav {
   top: 0;
   left: 0;
   z-index: 10;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0 , 0 ,0 , 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   color: #fff;
   transition: transform 0.4s linear;
-  
+
   &:after{
     content: "";
     position: absolute;
@@ -20,8 +22,7 @@ nav {
     right: 0;
     height: 100%;
     width: 1px;
-    background: linear-gradient(to bottom , rgba(0,0,0,0) ,rgba(white,.8),rgba(0,0,0,0));
-    box-shadow: 0 0 2px rgba(white,.7);
+    background: linear-gradient(to bottom , rgba(0,0,0,0) ,rgba(white,.7),rgba(0,0,0,0));
   }
   .navbar-inner {
     width: 100%;
@@ -95,7 +96,7 @@ nav {
           bottom: 0;
           left:0;
           font-weight: 700;
-          text-shadow: 0 0 1px $primary-color;
+          text-shadow: 0 0 2px $primary-color;
           width: 5rem;
           position: absolute;
           opacity: 0.8;
@@ -106,8 +107,15 @@ nav {
           align-items: center;
           margin: 0;
           padding: 0.3rem 0.5rem;
-
-          border-bottom: 1px solid #fff;
+          &:after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(to right , #fff , rgba(#fff,0));
+          }
         }
         svg {
           transition: all ease-out, 0.5s;

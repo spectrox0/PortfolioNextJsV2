@@ -18,7 +18,7 @@
     top: 0;
     left: 0;
     background-color: #000;
-    opacity: 0.3;
+    opacity: 0.4;
   }
 }
 
@@ -61,5 +61,48 @@
   }
   to {
     transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+
+
+/* ---------- Fog ---------- */
+.wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  .image {
+  position: absolute;
+  bottom:0;
+  width: 300vw;
+  height: 100vh;
+  z-index:2;
+   background-size: contain;
+   background-repeat: repeat-x;
+   background-position: 0 bottom;
+   &.img1 {
+   animation: animate 65s linear infinite;
+   }
+    &.img2 {
+   animation: animate 35s linear infinite;
+   }
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: .2;
+    transform: translate3d(0 ,0 ,0);
+  }
+  50% {
+    opacity: .4;
+        transform: translate3d(-100vw ,0 ,0);
+  }
+  100% {
+    opacity: .1;
+     transform: translate3d(-200vw ,0 ,0);
   }
 }

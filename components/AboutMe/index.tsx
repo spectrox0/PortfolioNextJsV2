@@ -10,13 +10,17 @@ import { FaUniversity, FaBusinessTime } from 'react-icons/fa'
 import data from '../../data/about.json'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import { motion } from 'framer-motion'
-import Image, { ImageProps } from 'next/image'
 
 const options: string[] = ['Education', 'Experience', 'Interests']
 export default function AboutMe() {
   const [op, setOp] = React.useState<number>(0)
   const [imageLoad, setImage] = React.useState<boolean>(false)
-
+  const imgRef = React.useRef<HTMLImageElement>()
+  React.useEffect(() => {
+    if (imgRef.current && imgRef.current.complete) {
+      setImage(true)
+    }
+  }, [])
   return (
     <AboutMeStyle
       id="about-me"
@@ -32,12 +36,15 @@ export default function AboutMe() {
             {data && (
               <>
                 <div className={`img ${imageLoad ? 'active' : ''}`}>
-                  <Image
+                  <img
+                    alt="me"
+                    src={require('images/alejandro velazco.jpg?lqip')}
+                  />
+                  <img
                     alt="alejandro velazco"
+                    ref={imgRef}
+                    src={require('images/alejandro velazco.jpg?webp')}
                     onLoad={() => setImage(true)}
-                    src='/images/alejandro velazco.jpg'
-                    width={500}
-                    height={500}
                   />
                 </div>
 

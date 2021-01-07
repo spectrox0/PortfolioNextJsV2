@@ -69,6 +69,7 @@ const StyleContent = styled.div`
     .word2 {
       display: inline-block;
       font-weight: 700;
+      text-shadow: 0 0 3px ${primaryColor};
       color: ${primaryColor};
     }
   }
