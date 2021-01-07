@@ -1,0 +1,6 @@
+export const OPEN_WORK = 'OPEN_WORK'
+export const CLOSE_WORK = 'CLOSE_WORK'
+export const CHANGE_OP = 'CHANGE_OP'
+export const GET_WORKS = 'GET_WORKS'
+export const SUCCESS_GET_WORKS = 'SUCCESS_GET_WORK'
+export const FAILURE_GET_WORKS = 'FAILURE_GET_WORKS'
