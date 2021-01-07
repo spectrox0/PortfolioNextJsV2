@@ -1,7 +1,8 @@
 import React from 'react'
 import Contact from '../components/Contact-me'
 import Head from 'next/head'
-export default function Home() {
+
+const ContactMe: React.FC = () => {
   return (
     <>
       <Head>
@@ -11,3 +12,4 @@ export default function Home() {
     </>
   )
 }
+export default ContactMe;

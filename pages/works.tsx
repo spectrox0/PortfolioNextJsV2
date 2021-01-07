@@ -7,8 +7,8 @@ import Loading from '../components/Loading'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchWorks } from '../redux/actions/Works'
 import { AnimatePresence } from 'framer-motion'
-import { Console } from 'console'
-export default function WorksPage() {
+
+const WorksPage: React.FC = () => {
   const dispatch = useDispatch()
   const { works, loadingWorks } = useSelector(state => ({
     ...state,
@@ -21,7 +21,6 @@ export default function WorksPage() {
       dispatch(fetchWorks())
     }
   }, [])
-  console.log(works)
   return (
     <CloudinaryContext cloudName="dh4qxznuz">
       <Head>
@@ -33,3 +32,4 @@ export default function WorksPage() {
     </CloudinaryContext>
   )
 }
+export default WorksPage

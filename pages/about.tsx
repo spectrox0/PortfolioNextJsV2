@@ -2,7 +2,7 @@ import React from 'react'
 import AboutMe from '../components/AboutMe'
 import Head from 'next/head'
 
-export default function Home() {
+const  About:React.FC = () =>{
   return (
     <>
       <Head>
@@ -12,3 +12,4 @@ export default function Home() {
     </>
   )
 }
+export default About

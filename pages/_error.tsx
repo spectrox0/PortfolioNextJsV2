@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { primaryColor } from '../helpers/styles'
 import Head from 'next/head'
+import {ErrorProps } from 'next/error'
 import { motion } from 'framer-motion'
-export default function Error404({ statusCode }) {
+const Error = ({ statusCode } : ErrorProps) => {
   return (
     <ErrorS
       animate={{ opacity: 1, scale: 1, transition: { duration: 0.5 } }}
@@ -19,7 +20,7 @@ export default function Error404({ statusCode }) {
     </ErrorS>
   )
 }
-
+export default Error;
 const ErrorS = styled(motion.section)`
   height: 100%;
   width: 100%;

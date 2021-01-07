@@ -2,7 +2,7 @@ import React from 'react'
 import Skills from '../components/Skills'
 import Head from 'next/head'
 
-export default function Home() {
+const Skill: React.FC = () => {
   return (
     <>
       <Head>
@@ -12,3 +12,4 @@ export default function Home() {
     </>
   )
 }
+export default Skill;

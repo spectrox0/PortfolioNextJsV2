@@ -31,5 +31,5 @@ export default function Loading() {
     }
   })
 
-  return (loading || loadingClient) && <LoadingSpinner />
+  return (loading || loadingClient)? <LoadingSpinner /> : null
 }

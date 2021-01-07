@@ -12,10 +12,10 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import { motion } from 'framer-motion'
 
 const options: string[] = ['Education', 'Experience', 'Interests']
-export default function AboutMe() {
+const AboutMe:React.FC = () => {
   const [op, setOp] = React.useState<number>(0)
   const [imageLoad, setImage] = React.useState<boolean>(false)
-  const imgRef = React.useRef<HTMLImageElement>()
+  const imgRef = React.useRef<HTMLImageElement>(null)
   React.useEffect(() => {
     if (imgRef.current && imgRef.current.complete) {
       setImage(true)
@@ -55,6 +55,7 @@ export default function AboutMe() {
                   <p>{data.text}</p>
                   <div className="options">
                     {options.map((item, i) => (
+                        // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
                       <span
                         key={item}
                         className={`option ${op == i ? 'active' : ''} `}
@@ -158,7 +159,7 @@ export default function AboutMe() {
     </AboutMeStyle>
   )
 }
-
+export default AboutMe;
 const AboutMeVariant = {
   initial: {
     x: '100%',

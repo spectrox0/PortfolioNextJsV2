@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { primaryColor } from '../helpers/styles'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
-export default function Error404() {
+const Error404 : React.FC = () => {
   return (
     <ErrorS
       animate={{ opacity: 1, scale: 1, transition: { duration: 0.5 } }}
@@ -19,7 +19,7 @@ export default function Error404() {
     </ErrorS>
   )
 }
-
+export default Error404;
 const ErrorS = styled(motion.section)`
   height: 100%;
   width: 100%;
