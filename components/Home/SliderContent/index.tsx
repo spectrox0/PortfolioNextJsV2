@@ -59,14 +59,14 @@ const StyleContent = styled.div`
     margin: 0;
     letter-spacing: 0.1em;
     width: auto;
-    font-weight: 300;
+    font-weight: 400;
     color: white;
     text-transform: uppercase;
     font-size: 3em;
     margin-bottom: 1rem;
     .word2 {
       display: inline-block;
-      font-weight: 500;
+      font-weight: 700;
       text-shadow: 0 0 3px ${primaryColor};
       color: ${primaryColor};
     }
