@@ -59,16 +59,14 @@ const StyleContent = styled.div`
     margin: 0;
     letter-spacing: 0.1em;
     width: auto;
-    font-weight: 400;
+    font-weight: 300;
     color: white;
     text-transform: uppercase;
-
     font-size: 3em;
-    font-weight: 400;
     margin-bottom: 1rem;
     .word2 {
       display: inline-block;
-      font-weight: 700;
+      font-weight: 500;
       text-shadow: 0 0 3px ${primaryColor};
       color: ${primaryColor};
     }
@@ -86,11 +84,11 @@ const StyleContent = styled.div`
       align-items: center;
       text-align: center;
       margin: 0.5rem;
-
+      background: rgba(27,28,36,.3);
       justify-content: center;
       padding: 0.7rem;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 300;
       letter-spacing: 0.1em;
       font-size: 1.1em;
       border: solid 1px rgba(255, 255, 255, 0.3);

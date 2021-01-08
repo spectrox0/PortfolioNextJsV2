@@ -8,22 +8,19 @@ import PerfectScroll from 'react-perfect-scrollbar'
 import { motion } from 'framer-motion'
 const ContactVariant = {
   initial: {
-    x: '100%',
+    opacity: 0,
   },
   enter: {
-    x: '0',
+    opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
       ease: [0.48, 0.15, 0.25, 0.96],
     },
   },
   exit: {
-    x: '100%',
-    transition: {
-      duration: 0.5,
-      ease: [0.48, 0.15, 0.25, 0.96],
-    },
+    opacity: 0,
   },
+
 }
 const DataContactVariant = {
   initial: {
@@ -120,11 +117,10 @@ const ContactS = styled(motion.section)`
   position: absolute;
   top: 0;
   width: 100%;
-  background-color: rgba(10, 10, 10, 0.7);
+  background-color: rgba(10, 10, 10, 0.2);
   left: 0;
   z-index: 6;
-  height: 100%;
-  transform: translate3d(100%, 0, 0);
+  transform: translate3d(0, 0, 0);
   padding: 0;
   overflow-x: hidden;
   overflow-y: auto;
@@ -156,7 +152,7 @@ const ContactS = styled(motion.section)`
     font-weight: 400;
     text-transform: uppercase;
     span {
-      font-weight: 700;
+      font-weight: 500;
       color: ${primaryColor};
     }
   }

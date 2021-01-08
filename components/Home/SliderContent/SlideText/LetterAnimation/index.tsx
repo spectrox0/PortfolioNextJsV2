@@ -41,6 +41,7 @@ from {
 const LetterS = styled.span<PropsStyled>`
   display: flex;
   position: relative;
+  font-weight: 300;
   left: 5rem;
   opacity: 0;
   animation: ${enter} 1s linear ${({ delay }) => delay + 'ms'} both,

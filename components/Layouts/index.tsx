@@ -24,7 +24,7 @@ export default function Layout({ children }: Props) {
                 startCarousel={goRightBg}
               />
             ))}    */}
-            <Fog/>
+            <Fog />
           </div>
           <Navbar />
           <div className="layout-wrapper">{children}</div>

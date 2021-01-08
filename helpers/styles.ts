@@ -1,4 +1,4 @@
-export const primaryColor = '#ff616f'
+export const primaryColor = '#afbda1'
 export const grayColor = '#bdbdbd'
 
 interface size {

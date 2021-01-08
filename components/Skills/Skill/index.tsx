@@ -56,7 +56,7 @@ const SkillS = styled(motion.div)`
   position: relative;
   opacity: 0;
   .label {
-    font-weight: 500;
+    font-weight: 300;
     display: flex;
     color: white;
     align-items: center;
@@ -82,12 +82,16 @@ const SkillS = styled(motion.div)`
       font-size: 1.1em;
       position: relative;
       z-index: 1;
+      font-weight: 500;
+      opacity: .8;
     }
     .name {
       flex: 1;
       letter-spacing: 0.1em;
       font-weight: 500;
-      font-size: 1.1em;
+      font-size: 1.2em;
+      opacity: .8;
+      transform-origin: left bottom;
     }
   }
   .line {
@@ -95,24 +99,24 @@ const SkillS = styled(motion.div)`
     align-items: center;
     position: relative;
     width: 100%;
-    height: 0.2em;
+    height: 0.15em;
     background: rgba(255, 255, 255, 0.5);
     .line-progress {
       transform: translate3d(0, 0, 0);
       overflow: visible;
-      background: ${primaryColor};
+      background: #fff;
       width: 10rem;
-      height: 0.2em;
+      height: 0.15em;
       position: relative;
       opacity: 0;
       &:after{
         content:"";
         position: absolute;
-        height: 1em;
+        height: .9em;
         border-radius: 50%;
-        width: 1em;
+        width: .9em;
         transform: translate3d(0, -50%, 0);
-        background: ${primaryColor};
+        background: #fff;
         right: 0;
         top: 50%;
       }

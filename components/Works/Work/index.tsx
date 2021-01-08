@@ -160,7 +160,8 @@ const WorkStyles = styled(motion.span) <PropsStyled>`
     border: solid 1px rgba(255, 255, 255, 0.3);
     h3 {
       display: flex;
-      font-weight: 500;
+      font-weight: 400;
+      letter-spacing: .12em;
       font-size: 1.3em;
       position: relative;
       text-transform: uppercase;

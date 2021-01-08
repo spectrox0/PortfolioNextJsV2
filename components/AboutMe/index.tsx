@@ -162,18 +162,19 @@ const AboutMe:React.FC = () => {
 export default AboutMe;
 const AboutMeVariant = {
   initial: {
-    x: '100%',
+    opacity: 0,
   },
   enter: {
-    x: '0',
+    opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
       ease: [0.48, 0.15, 0.25, 0.96],
     },
   },
   exit: {
-    x: '100%',
+    opacity: 0,
   },
+
 }
 const InputAnimationImg = keyframes`
 from {
@@ -189,7 +190,6 @@ const AboutMeStyle = styled(motion.section)`
   color: #fff;
   width: 100%;
   position: absolute;
-  background-color: rgba(10, 10, 10, 0.7);
   top: 0;
   left: 0;
   z-index: 6;
@@ -363,7 +363,7 @@ const AboutMeStyle = styled(motion.section)`
       z-index:-1;
       width: 100%;
       height: 100%;
-      border: 3px solid transparent;
+      border: 1px solid transparent;
       transform: translate3d(0, 0, 0) rotate(225deg) scale(0);
       border-left-color: ${primaryColor};
       border-right-color: ${primaryColor};
@@ -379,7 +379,7 @@ const AboutMeStyle = styled(motion.section)`
             z-index: 2;
             width: 100%;
             height: 100%;
-            border: 3px solid transparent;
+            border: 1px solid transparent;
             transform: translate3d(0, 0, 0)  scale(.96);
             border-top-color:#fff;
             border-bottom-color: #fff;

@@ -21,7 +21,7 @@
     top: 0;
     left: 0;
     background-color: #000;
-    opacity: 0.3;
+    opacity: 0.1;
   }
 }
 
@@ -86,12 +86,11 @@
    background-size: contain;
    background-repeat: repeat-x;
    background-position: 0 bottom;
-   &.img1 {
-   animation: animate 65s linear infinite;
-   }
-    &.img2 {
-   animation: animate 35s linear infinite;
-   }
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        animation: animate $i * 20s linear infinite;
+      }
+    }
   }
 }
 
@@ -101,11 +100,11 @@
     transform: translate3d(0 ,0 ,0);
   }
   50% {
-    opacity: .5;
-        transform: translate3d(-100vw ,0 ,0);
+    opacity: .1;
+    transform: translate3d(-100vw ,0 ,0);
   }
   100% {
     opacity: 0;
-     transform: translate3d(-200vw ,0 ,0);
+    transform: translate3d(-200vw ,0 ,0);
   }
 }

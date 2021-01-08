@@ -45,9 +45,9 @@ const StyleSlide = styled.p`
   position: absolute;
   display: -webkit-box;
   letter-spacing: 0.15em;
+  font-weight: 300;
   font-size: 1.5em;
   color: white;
   white-space: nowrap;
   text-transform: uppercase;
-  color: white;
 `

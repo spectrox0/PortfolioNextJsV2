@@ -229,7 +229,7 @@ const ModalStyle = styled.div<PropModal>`
     position: relative;
     margin-bottom: 1rem;
 
-    font-weight: 500;
+    font-weight: 400;
     display: flex;
     align-items: center;
     &:after,
@@ -256,7 +256,7 @@ const ModalStyle = styled.div<PropModal>`
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-weight: 900;
+    font-weight: 300;
     text-transform: uppercase;
     &:hover {
       color: ${primaryColor};
@@ -292,7 +292,7 @@ const ModalStyle = styled.div<PropModal>`
       color: ${primaryColor};
       border-radius: 500px;
       flex: 1;
-      font-weight: 600;
+      font-weight: 300;
       padding: 0.5rem 0.7rem;
       margin: 0.5rem;
     }

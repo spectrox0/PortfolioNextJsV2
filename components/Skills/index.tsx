@@ -167,18 +167,19 @@ export default function Skills() {
 
   const SkillVariant = {
     initial: {
-      x: '100%',
+      opacity: 0,
     },
     enter: {
-      x: '0',
+      opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.4,
         ease: [0.48, 0.15, 0.25, 0.96],
       },
     },
     exit: {
-      x: '100%',
+      opacity: 0,
     },
+
   }
   return (
     <SkillS
@@ -232,8 +233,6 @@ const SkillS = styled(motion.section)`
   left: 0;
   z-index: 6;
   width: 100%;
-  background-color: rgba(10, 10, 10, 0.7);
-  transform: translate3d(100%, 0, 0);
   overflow-y: auto;
   &::-webkit-scrollbar {
     width: 0.7em;
@@ -266,10 +265,10 @@ const SkillS = styled(motion.section)`
       color: #fff;
       text-transform: uppercase;
 
-      font-weight: 400;
+      font-weight: 300;
       margin-bottom: 1rem;
       span {
-        font-weight: 700;
+        font-weight: 500;
         color: ${primaryColor};
       }
     }
@@ -301,7 +300,7 @@ const SkillS = styled(motion.section)`
         justify-content: center;
         padding: 0.7rem;
         cursor: pointer;
-        font-weight: 600;
+        font-weight: 300;
         letter-spacing: 0.1em;
         font-size: 1.1em;
         border: solid 1px rgba(255, 255, 255, 0.3);

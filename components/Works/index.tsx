@@ -151,7 +151,7 @@ const WorksS = styled(motion.section) <PropsStyled>`
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  background-color: rgba(10, 10, 10, 0.7);
+
   transform: translate3d(0, 0, 0);
   padding: 0;
   z-index: 7;
@@ -186,11 +186,12 @@ const WorksS = styled(motion.section) <PropsStyled>`
       justify-content: center;
       padding: 0.7rem;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 300;
       letter-spacing: 0.1em;
       font-size: 1.1em;
       border: solid 1px rgba(255, 255, 255, 0.3);
       transition: all 0.3s linear;
+      background-color: rgba(27,28,36,.2);
       &.active,
       &:hover {
         color: ${primaryColor};
@@ -221,7 +222,7 @@ const WorksS = styled(motion.section) <PropsStyled>`
     text-transform: uppercase;
     justify-content: center;
     color: ${primaryColor};
-    font-weight: 700;
+    font-weight: 400;
     margin-bottom: 4rem;
 
     span {
@@ -230,7 +231,7 @@ const WorksS = styled(motion.section) <PropsStyled>`
       position: absolute;
       font-size: 1.7em;
       width: 100%;
-      opacity: 0.3;
+      opacity: 0.2;
       left: 50%;
       top: 50%;
       display: flex;
