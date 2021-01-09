@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Slide from './SlideText'
 import styled from 'styled-components'
 import { primaryColor } from '../../../helpers/styles'
+import {Title} from '../../../styles/titles'
+import {Btn} from '../../../styles/buttons'
 import Link from 'next/link'
 export default function SliderContent() {
   const [current, setCurrent] = useState<number>(0)
@@ -16,9 +18,9 @@ export default function SliderContent() {
   return (
     <StyleContent>
       <div className="text">
-        <h1>
+        <Title margin="0 0 1rem 0" >
           Hi I'm Alejandro <span className="word2"> Velazco</span>{' '}
-        </h1>{' '}
+        </Title>
         {elements.map((element, index) =>
           current == index &&
           <Slide
@@ -30,10 +32,10 @@ export default function SliderContent() {
       </div>
       <div className="options">
         <Link href="/works">
-          <span> My Works</span>
+          <Btn color={primaryColor}> My Works</Btn>
         </Link>
         <Link href="/contact">
-          <span> Contact Me</span>
+          <Btn> Contact Me</Btn>
         </Link>
       </div>
     </StyleContent>
@@ -53,57 +55,12 @@ const StyleContent = styled.div`
     flex-direction: column;
     padding: 0.5rem;
   }
-  h1 {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    letter-spacing: 0.1em;
-    width: auto;
-    font-weight: 400;
-    color: white;
-    text-transform: uppercase;
-    font-size: 3em;
-    margin-bottom: 1rem;
-    .word2 {
-      display: inline-block;
-      font-weight: 700;
-      text-shadow: 0 0 3px ${primaryColor};
-      color: ${primaryColor};
-    }
-  }
+  
   .options {
     margin-top: 5rem;
     display: flex;
     flex-wrap: wrap;
     position: relative;
-
-    span {
-      text-transform: uppercase;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      margin: 0.5rem;
-      background: rgba(27,28,36,.3);
-      justify-content: center;
-      padding: 0.7rem;
-      cursor: pointer;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      font-size: 1.1em;
-      border: solid 1px rgba(255, 255, 255, 0.3);
-      transition: all 0.3s linear;
-      &:first-child,
-      &:hover {
-        color: ${primaryColor};
-        border-color: ${primaryColor};
-      }
-      &:hover {
-        background: rgba(255, 255, 255, 0.05);
-      }
-      &:active {
-        opacity: 0.7;
-      }
-    }
+    
   }
 `

@@ -6,6 +6,7 @@ import { FaGithub, FaInstagram, FaLinkedin, FaFacebook } from 'react-icons/fa'
 import { MdPhone, MdMail } from 'react-icons/md'
 import PerfectScroll from 'react-perfect-scrollbar'
 import { motion } from 'framer-motion'
+import {Title} from '../../styles/titles'
 const ContactVariant = {
   initial: {
     opacity: 0,
@@ -48,9 +49,9 @@ const ContactMe: React.FC = () => {
     >
       <PerfectScroll>
         <div className="container">
-          <h2>
-            <span> Contact</span> me
-          </h2>
+          <Title>
+            <span className='word2'> Contact</span> me
+          </Title>
 
           <div className="grid">
             <Form />
@@ -143,18 +144,6 @@ const ContactS = styled(motion.section)`
     background-color: transparent;
     position: fixed;
     border-left: solid 1px rgb(240, 240, 240);
-  }
-  h2 {
-    font-size: 2.5em;
-    color: white;
-    text-align: start;
-    letter-spacing: 0.15em;
-    font-weight: 400;
-    text-transform: uppercase;
-    span {
-      font-weight: 500;
-      color: ${primaryColor};
-    }
   }
   .container {
     overflow-x: hidden;

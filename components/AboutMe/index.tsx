@@ -10,8 +10,11 @@ import { FaUniversity, FaBusinessTime } from 'react-icons/fa'
 import data from '../../data/about.json'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import { motion } from 'framer-motion'
-
+import {Title} from '../../styles/titles'
 const options: string[] = ['Education', 'Experience', 'Interests']
+
+
+
 const AboutMe:React.FC = () => {
   const [op, setOp] = React.useState<number>(0)
   const [imageLoad, setImage] = React.useState<boolean>(false)
@@ -49,9 +52,9 @@ const AboutMe:React.FC = () => {
                 </div>
 
                 <div className="biography">
-                  <h2>
-                    <span>About </span> me
-                  </h2>
+                  <Title>
+                    <span className="word2">About </span> me
+                  </Title>
                   <p>{data.text}</p>
                   <div className="options">
                     {options.map((item, i) => (
@@ -213,7 +216,7 @@ const AboutMeStyle = styled(motion.section)`
       text-transform: uppercase;
       letter-spacing: 0.1em;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 300;
       &:hover {
         opacity: 0.8;
       }
@@ -274,7 +277,7 @@ const AboutMeStyle = styled(motion.section)`
     }
     .title {
       text-align: left;
-      font-weight: 500;
+      font-weight: 400;
       font-size: 1.5em;
       color: #fff;
       text-transform: capitalize;
@@ -419,18 +422,5 @@ const AboutMeStyle = styled(motion.section)`
     min-width: 20rem;
     padding: 1rem;
 
-    h2 {
-      font-size: 2.5em;
-      margin: 0;
-      letter-spacing: 0.15em;
-      font-size: 2.5em;
-      text-transform: uppercase;
-      font-weight: 400;
-
-      span {
-        font-weight: 700;
-        color: ${primaryColor};
-      }
-    }
   }
 `

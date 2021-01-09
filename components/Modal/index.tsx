@@ -225,10 +225,8 @@ const ModalStyle = styled.div<PropModal>`
     padding: 0;
     width: 100%;
     text-align: center;
-    display: block;
     position: relative;
     margin-bottom: 1rem;
-
     font-weight: 400;
     display: flex;
     align-items: center;

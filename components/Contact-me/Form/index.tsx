@@ -5,6 +5,7 @@ import { Formik } from 'formik'
 import axios from 'axios'
 import Loading from '../../Loading'
 import { motion } from 'framer-motion'
+import {Btn} from '../../../styles/buttons'
 export default function Form() {
   const [loading, setLoading] = React.useState<boolean>(false)
 
@@ -12,7 +13,7 @@ export default function Form() {
     <Formik
       initialValues={{ name: '', email: '', subject: '', message: '' }}
       validate={values => {
-        var errors = {}
+        const errors = {}
         if (values.name.length > 30) errors['username'] = 'No more 30 characters'
         if (values.name.length <= 0) {
           errors['username'] = 'required'
@@ -112,7 +113,7 @@ export default function Form() {
                 value={values.message}
                 onChange={handleChange}
                 onBlur={handleBlur}
-              ></textarea>
+               />
               <div className={`input ${values.message && 'text'}`}>
                 <label className="label-name" htmlFor="message">
                   message
@@ -120,9 +121,9 @@ export default function Form() {
               </div>
             </div>
 
-            <button className="btn" type="submit">
+            <Btn type="submit">
               SEND
-            </button>
+            </Btn>
           </motion.form>
         </>
       )}

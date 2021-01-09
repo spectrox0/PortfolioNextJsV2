@@ -11,14 +11,14 @@ interface Props {
   content: string
   category: string
   height: number
-  openModal: ({ }: object) => void
-  link: string
+  openModal: (work) => void
+  link: string | undefined
   date: number
 }
 interface PropsStyled {
   height: number
 }
-export default function Work({
+const Work:React.FC<Props> = ({
   title,
   img,
   images,
@@ -28,7 +28,7 @@ export default function Work({
   height,
   openModal,
   link,
-}: Props) {
+}) => {
   const [isLoad, setLoad] = React.useState<boolean>(false)
   const imgRef = React.useRef<HTMLImageElement>()
   React.useEffect(() => {
@@ -64,7 +64,7 @@ export default function Work({
     </WorkStyles>
   )
 }
-
+export default Work;
 const WorkVariant = {
   initial: {
     opacity: 0,
@@ -88,7 +88,6 @@ const WorkStyles = styled(motion.span) <PropsStyled>`
   background: transparent;
   border-radius: 0;
   cursor: pointer;
-  align-items: center;
   width: 100%;
   display: flex;
   align-items: center;
@@ -112,7 +111,6 @@ const WorkStyles = styled(motion.span) <PropsStyled>`
     width: 100%;
     height: 100%;
     position: relative;
-    overflow: hidden;
 
     .img {
       width: 100%;
@@ -141,8 +139,6 @@ const WorkStyles = styled(motion.span) <PropsStyled>`
       min-height: 100%;
     }
   }
-  position: relative;
-  overflow: hidden;
 
   .title {
     padding: 1rem 0.2rem;

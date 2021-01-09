@@ -7,12 +7,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import { motion } from 'framer-motion'
 import WorkModel from '../../models/Work'
+import {Title} from '../../styles/titles'
+import {Btn} from '../../styles/buttons'
 interface Props {
   works: WorkModel[]
 }
 interface PropsStyled {
   isOpen: boolean
 }
+
 export default function Works({ works }: Props) {
   const { scaleDown } = transitions
   const ops: string[] = ['ALL', 'VUE', 'ANGULAR', 'REACT', 'PWA', 'NODEJS']
@@ -77,19 +80,19 @@ export default function Works({ works }: Props) {
     >
       <PerfectScrollbar>
         <div className="container">
-          <h2>
-            {' '}
-            Works <span> Works</span>
-          </h2>
+          <Title textAlign='center' fontWeight={700} color={primaryColor} margin={"2rem 0"}>
+            Works <span className='shadow'> Works</span>
+          </Title>
           <div className="switch">
             {ops.map((item, i) => (
-              <div
+              <Btn
                 key={item}
-                className={`op ${i == currentOp ? 'active' : ''}`}
+                flexGrow={1}
+                className={i == currentOp ? 'active' : ''}
                 onClick={() => setCurrentOp(i)}
               >
                 {item}
-              </div>
+              </Btn>
             ))}
           </div>
 
@@ -130,9 +133,9 @@ export default function Works({ works }: Props) {
 
           {workss().length > 6 && (
             <div className="row-button">
-              <button className="btn" onClick={() => setMore(!more)}>
+              <Btn onClick={() => setMore(!more)}>
                 {!more ? 'View More' : 'Occult'}
-              </button>
+              </Btn>
             </div>
           )}
         </div>
@@ -176,32 +179,7 @@ const WorksS = styled(motion.section) <PropsStyled>`
     flex-shrink: 1;
     flex-wrap: wrap;
     position: relative;
-
-    .op {
-      display: flex;
-      align-items: center;
-      text-align: center;
-      flex: 1;
-      margin: 0.5rem;
-      justify-content: center;
-      padding: 0.7rem;
-      cursor: pointer;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      font-size: 1.1em;
-      border: solid 1px rgba(255, 255, 255, 0.3);
-      transition: all 0.3s linear;
-      background-color: rgba(27,28,36,.2);
-      &.active,
-      &:hover {
-        color: ${primaryColor};
-        background: rgba(255, 255, 255, 0.05);
-        border-color: ${primaryColor};
-      }
-      &:active {
-        opacity: 0.7;
-      }
-    }
+    
   }
   .row-button {
     display: flex;
@@ -209,41 +187,5 @@ const WorksS = styled(motion.section) <PropsStyled>`
     justify-content: flex-end;
     align-items: center;
   }
-  h2 {
-    letter-spacing: 0.15em;
-    font-size: 2.5em;
-    display: flex;
-    flex: 1;
-    color: white;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    text-transform: uppercase;
-    justify-content: center;
-    color: ${primaryColor};
-    font-weight: 400;
-    margin-bottom: 4rem;
 
-    span {
-      color: #fff;
-      z-index: -1;
-      position: absolute;
-      font-size: 1.7em;
-      width: 100%;
-      opacity: 0.2;
-      left: 50%;
-      top: 50%;
-      display: flex;
-      align-items: center;
-      transform: translate(-50%, -50%);
-      &:after,
-      &:before {
-        content: '';
-        width: 50%;
-        height: 1px;
-        background: white;
-      }
-    }
-  }
 `

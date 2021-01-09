@@ -27,141 +27,145 @@ import styled from 'styled-components'
 import { device, primaryColor } from '../../helpers/styles'
 import PerfectScroll from 'react-perfect-scrollbar'
 import { motion } from 'framer-motion'
+import {Title} from '../../styles/titles'
+import {Btn} from '../../styles/buttons'
 interface skill {
   name: string,
   icon: React.ReactElement,
   progress: number,
   categories: string[]
 }
+
+const skills: skill[] = [
+  {
+    name: 'Vue',
+    icon: <FaVuejs />,
+    progress: 70,
+    categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES'],
+  },
+  {
+    name: 'React',
+    icon: <FaReact />,
+    progress: 80,
+    categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES'],
+  },
+  {
+    name: 'Angular',
+    icon: <FaAngular />,
+    progress: 60,
+    categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES'],
+  },
+  {
+    name: 'Python',
+    icon: <FaPython />,
+    progress: 60,
+    categories: ['LANGUAGES', 'BACKEND'],
+  },
+
+  {
+    name: 'Pytorch',
+    icon: <GiArtificialIntelligence />,
+    progress: 30,
+    categories: ['MACHINE LEARNING'],
+  },
+
+  {
+    name: 'Java',
+    icon: <FaJava />,
+    progress: 50,
+    categories: ['BACKEND', 'LANGUAGES'],
+  },
+  {
+    name: 'Php',
+    icon: <FaPhp />,
+    progress: 40,
+    categories: ['BACKEND', 'LANGUAGES'],
+  },
+
+  {
+    name: 'Bootstrap',
+    icon: <FaBootstrap />,
+    progress: 60,
+    categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES'],
+  },
+  {
+    name: 'Django',
+    icon: <DiDjango />,
+    progress: 60,
+    categories: ['BACKEND', 'FRAMEWORKS/LIBRARIES'],
+  },
+  {
+    name: 'Symfony',
+    icon: <FaSymfony />,
+    progress: 40,
+    categories: ['BACKEND', 'FRAMEWORKS/LIBRARIES'],
+  },
+  {
+    name: 'Laravel',
+    icon: <FaLaravel />,
+    progress: 30,
+    categories: ['BACKEND', 'FRAMEWORKS/LIBRARIES'],
+  },
+  {
+    name: 'SQL',
+    icon: <DiMysql />,
+    progress: 50,
+    categories: ['BACKEND', 'LANGUAGES'],
+  },
+  {
+    name: 'MongoDB',
+    icon: <DiMongodb />,
+    progress: 50,
+    categories: ['BACKEND', 'LANGUAGES'],
+  },
+  {
+    name: 'Firebase',
+    icon: <DiFirebase />,
+    progress: 50,
+    categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES'],
+  },
+  {
+    name: 'React Native',
+    icon: <FaReact />,
+    progress: 50,
+    categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES'],
+  },
+  {
+    name: 'Node.js',
+    icon: <FaNode />,
+    progress: 50,
+    categories: ['BACKEND'],
+  },
+  {
+    name: 'Javascript',
+    icon: <FaJs />,
+    progress: 75,
+    categories: ['FRONTEND', 'LANGUAGES'],
+  },
+
+  {
+    name: 'CSS3',
+    icon: <DiCss3 />,
+    progress: 80,
+    categories: ['FRONTEND', 'LANGUAGES', 'UI/UX DESIGN'],
+  },
+
+
+  {
+    name: 'GraphQL',
+    icon: <GrGraphQl />,
+    progress: 70,
+    categories: ['BACKEND'],
+  },
+]
+const ops: string[] = [
+  'FRONTEND',
+  'BACKEND',
+  'FRAMEWORKS/LIBRARIES',
+  'LANGUAGES',
+]
 export default function Skills() {
-  const skills: skill[] = [
-    {
-      name: 'Vue',
-      icon: <FaVuejs />,
-      progress: 70,
-      categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES'],
-    },
-    {
-      name: 'React',
-      icon: <FaReact />,
-      progress: 80,
-      categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES'],
-    },
-    {
-      name: 'Angular',
-      icon: <FaAngular />,
-      progress: 60,
-      categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES'],
-    },
-    {
-      name: 'Python',
-      icon: <FaPython />,
-      progress: 60,
-      categories: ['LANGUAGES', 'BACKEND'],
-    },
 
-    {
-      name: 'Pytorch',
-      icon: <GiArtificialIntelligence />,
-      progress: 30,
-      categories: ['MACHINE LEARNING'],
-    },
-
-    {
-      name: 'Java',
-      icon: <FaJava />,
-      progress: 50,
-      categories: ['BACKEND', 'LANGUAGES'],
-    },
-    {
-      name: 'Php',
-      icon: <FaPhp />,
-      progress: 40,
-      categories: ['BACKEND', 'LANGUAGES'],
-    },
-
-    {
-      name: 'Bootstrap',
-      icon: <FaBootstrap />,
-      progress: 60,
-      categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES'],
-    },
-    {
-      name: 'Django',
-      icon: <DiDjango />,
-      progress: 60,
-      categories: ['BACKEND', 'FRAMEWORKS/LIBRARIES'],
-    },
-    {
-      name: 'Symfony',
-      icon: <FaSymfony />,
-      progress: 40,
-      categories: ['BACKEND', 'FRAMEWORKS/LIBRARIES'],
-    },
-    {
-      name: 'Laravel',
-      icon: <FaLaravel />,
-      progress: 30,
-      categories: ['BACKEND', 'FRAMEWORKS/LIBRARIES'],
-    },
-    {
-      name: 'SQL',
-      icon: <DiMysql />,
-      progress: 50,
-      categories: ['BACKEND', 'LANGUAGES'],
-    },
-    {
-      name: 'MongoDB',
-      icon: <DiMongodb />,
-      progress: 50,
-      categories: ['BACKEND', 'LANGUAGES'],
-    },
-    {
-      name: 'Firebase',
-      icon: <DiFirebase />,
-      progress: 50,
-      categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES'],
-    },
-    {
-      name: 'React Native',
-      icon: <FaReact />,
-      progress: 50,
-      categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES'],
-    },
-    {
-      name: 'Node.js',
-      icon: <FaNode />,
-      progress: 50,
-      categories: ['BACKEND'],
-    },
-    {
-      name: 'Javascript',
-      icon: <FaJs />,
-      progress: 75,
-      categories: ['FRONTEND', 'LANGUAGES'],
-    },
-
-    {
-      name: 'CSS3',
-      icon: <DiCss3 />,
-      progress: 80,
-      categories: ['FRONTEND', 'LANGUAGES', 'UI/UX DESIGN'],
-    },
-
-
-    {
-      name: 'GraphQL',
-      icon: <GrGraphQl />,
-      progress: 70,
-      categories: ['BACKEND'],
-    },
-  ]
-  const ops: string[] = [
-    'FRONTEND',
-    'BACKEND',
-    'FRAMEWORKS/LIBRARIES',
-    'LANGUAGES',
-  ]
 
   const [currentOp, setCurrentOp] = React.useState<number>(0)
 
@@ -192,19 +196,20 @@ export default function Skills() {
     >
       <PerfectScroll>
         <div className="container">
-          <h2>
-            My <span> Skills</span>
-          </h2>
+          <Title>
+            My <span className='word2'> Skills</span>
+          </Title>
           <div className="wrappers">
             <div className="switch">
               {ops.map((item, i) => (
-                <div
+                <Btn
                   key={item}
-                  className={`op ${i == currentOp ? 'active' : ''}`}
+                  flexGrow={1}
+                  className={i == currentOp ? 'active' : ''}
                   onClick={() => setCurrentOp(i)}
                 >
                   {item}
-                </div>
+                </Btn>
               ))}
             </div>
             <div className="col-skills">
@@ -276,11 +281,17 @@ const SkillS = styled(motion.section)`
     .wrappers {
       display: flex;
       flex: 1;
+      button {
+        width: 100%;
+      }
       @media (max-width: 992px) {
         flex-direction: column;
         .switch {
           display: flex;
           flex-wrap: wrap;
+          button{
+            width: auto;
+          }
           width: auto;
         }
       }
@@ -290,31 +301,7 @@ const SkillS = styled(motion.section)`
       margin: 1rem 0;
       margin-bottom: 2rem;
       position: relative;
-
-      .op {
-        display: flex;
-        flex: 1;
-        align-items: center;
-        text-align: center;
-        margin: 0.5rem;
-        justify-content: center;
-        padding: 0.7rem;
-        cursor: pointer;
-        font-weight: 300;
-        letter-spacing: 0.1em;
-        font-size: 1.1em;
-        border: solid 1px rgba(255, 255, 255, 0.3);
-        transition: all 0.3s linear;
-        &.active,
-        &:hover {
-          color: ${primaryColor};
-          background: rgba(255, 255, 255, 0.05);
-          border-color: ${primaryColor};
-        }
-        &:active {
-          opacity: 0.7;
-        }
-      }
+      
     }
     .col-skills {
       flex: 1;
