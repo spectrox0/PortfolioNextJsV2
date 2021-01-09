@@ -49,7 +49,7 @@ const ContactMe: React.FC = () => {
     >
       <PerfectScroll>
         <div className="container">
-          <Title>
+          <Title margin={'2rem 0'}>
             <span className='word2'> Contact</span> me
           </Title>
 
