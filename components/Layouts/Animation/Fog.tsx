@@ -3,19 +3,23 @@ import Particle from "react-particles-js"
 import styled from 'styled-components'
 import {primaryColor} from '../../../helpers/styles'
 const Fog: React.FC = () => {
+    const [width,setWidth] = React.useState<number>(0)
+    React.useEffect(() => {
+        setWidth(window.innerWidth)
+        const handlingSize = () => {
+            setWidth(window.innerWidth)
+        }
+        addEventListener('resize', handlingSize)
+        return () => removeEventListener('resize', handlingSize)
+    }, [])
     return (
         <ParticleS params={{
             "particles": {
-                shadow: {
-                    color : {
-                        value: primaryColor,
-                    }
-                },
                 move: {
-                    speed: 4
+                    speed: 3
                 },
                 "number": {
-                    "value": 100
+                    "value": width>700? 80 : 40
                 },
                 "size": {
                     "value": 2
