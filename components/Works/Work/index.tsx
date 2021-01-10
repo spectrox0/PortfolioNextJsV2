@@ -1,87 +1,91 @@
 import React from 'react'
 import styled from 'styled-components'
-import { device } from '../../../helpers/styles'
-import { Image, Transformation } from 'cloudinary-react'
-import { motion } from 'framer-motion'
+import {device} from '../../../helpers/styles'
+import {Image, Transformation} from 'cloudinary-react'
+import {motion} from 'framer-motion'
+
 interface Props {
-  title: string
-  img: string
-  images: string[]
-  categories: string[]
-  content: string
-  category: string
-  height: number
-  openModal: (work) => void
-  link: string | undefined
-  date: number
+    title: string
+    img: string
+    images: string[]
+    categories: string[]
+    content: string
+    category: string
+    height: number
+    openModal: (work) => void
+    link: string | undefined
+    date: number
 }
+
 interface PropsStyled {
-  height: number
+    height: number
 }
-const Work:React.FC<Props> = ({
-  title,
-  img,
-  images,
-  categories,
-  content,
-  date,
-  height,
-  openModal,
-  link,
-}) => {
-  const [isLoad, setLoad] = React.useState<boolean>(false)
-  const imgRef = React.useRef<HTMLImageElement>()
-  React.useEffect(() => {
-    if (imgRef.current && imgRef.current.complete) {
-      setLoad(true)
-    }
-  }, [])
-  return (
-    <WorkStyles
-      height={height}
-      initial="initial"
-      animate="enter"
-      variants={WorkVariant}
-      onClick={() =>
-        openModal({ title, img, images, content, categories, date, link })
-      }
-    >
-      <figure className="img-work">
-        <div className={`img ${isLoad ? 'active' : ''}`}>
-          <Image
-            ref={imgRef}
-            loading="lazy"
-            alt="work-current"
-            publicId={`${img}.webp`}
-          >
-            <Transformation quality="auto" />
-          </Image>
-        </div>
-        <div className="title">
-          <h3>{title}</h3>
-        </div>
-      </figure>
-    </WorkStyles>
-  )
+
+const Work: React.FC<Props> = ({
+                                   title,
+                                   img,
+                                   images,
+                                   categories,
+                                   content,
+                                   date,
+                                   height,
+                                   openModal,
+                                   link,
+                               }) => {
+    const [isLoad, setLoad] = React.useState<boolean>(false)
+    const imgRef = React.useRef<HTMLImageElement>()
+    React.useEffect(() => {
+        if (imgRef.current && imgRef.current.complete) {
+            setLoad(true)
+        }
+    }, [])
+    return (
+        <WorkStyles
+            height={height}
+            initial="initial"
+            animate="enter"
+            variants={WorkVariant}
+            onClick={() =>
+                openModal({title, img, images, content, categories, date, link})
+            }
+        >
+            <figure className="img-work">
+                <div className={`img ${isLoad ? 'active' : ''}`}>
+                    <Image
+                        ref={imgRef}
+                        loading="lazy"
+                        alt="work-current"
+                        publicId={`${img}.webp`}
+                    >
+                        <Transformation quality="auto"/>
+                    </Image>
+                </div>
+                <div className="title">
+                    <h3>{title}</h3>
+                </div>
+            </figure>
+        </WorkStyles>
+    )
 }
 export default Work;
 const WorkVariant = {
-  initial: {
-    opacity: 0,
-    originX: 0.5,
-    originY: 0.5,
-    scale: 0.4,
-  },
-  enter: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delay: 0.2,
-      duration: 0.4,
-      ease: 'linear',
+        initial: {
+            opacity: 0,
+            originX: 0.5,
+            originY: 0.5,
+            rotateY: '45deg',
+
     },
-  },
-}
+    enter: {
+        opacity: 1,
+        rotateY: '0deg',
+        transition: {
+            delay: 0.2,
+            duration: 0.4,
+            ease: 'linear',
+        },
+    },
+    }
 const WorkStyles = styled(motion.span) <PropsStyled>`
   z-index: 2;
   color: #ffffff;
@@ -101,6 +105,7 @@ const WorkStyles = styled(motion.span) <PropsStyled>`
   transform-origin: center center !important;
   opacity: 1;
   position: relative;
+
   .img-work {
     margin: 0;
     padding: 0;
@@ -119,6 +124,7 @@ const WorkStyles = styled(motion.span) <PropsStyled>`
       transition: all linear 0.3s;
       position: relative;
       z-index: 2;
+
       &.active {
         .blur-image {
           display: none;
@@ -154,6 +160,7 @@ const WorkStyles = styled(motion.span) <PropsStyled>`
     transition: all ease-in-out 0.3s;
     background-color: rgba(0, 0, 0, 0.2);
     border: solid 1px rgba(255, 255, 255, 0.3);
+
     h3 {
       display: flex;
       font-weight: 400;
@@ -170,13 +177,16 @@ const WorkStyles = styled(motion.span) <PropsStyled>`
       border: solid 1px rgba(255, 255, 255, 0.3);
     }
   }
+
   &:hover {
     .img {
       transform: scale3d(1.15, 1.15, 1);
       opacity: 0.3;
     }
+
     h3 {
     }
+
     .title {
       opacity: 1;
     }
