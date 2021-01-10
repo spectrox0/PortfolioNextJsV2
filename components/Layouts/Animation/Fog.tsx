@@ -22,7 +22,7 @@ const Fog: React.FC = () => {
                     "value": width>700? 80 : 40
                 },
                 "size": {
-                    "value": 2
+                    "value": 3
                 },
                 "color": {
                     value: primaryColor,
