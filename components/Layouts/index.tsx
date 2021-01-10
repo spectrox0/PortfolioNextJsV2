@@ -26,7 +26,9 @@ export default function Layout({ children }: Props) {
             ))}    */}
             <Fog />
           </div>
+
           <Navbar />
+
           <div className="layout-wrapper">{children}</div>
         </div>
       </main>

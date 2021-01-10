@@ -21,6 +21,7 @@ class MyDocument extends Document<Props> {
         // Step 4: Pass styleTags as a prop
         return { ...page, styleTags }
     }
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
     render() {
         const { styleTags } = this.props
         return (
