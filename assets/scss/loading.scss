@@ -62,21 +62,24 @@
     position: relative;
     height: 4rem;
     width: 4rem;
-    border: 2px solid transparent;
-    border-top-color: $primary-color;
-    border-bottom-color: $primary-color;
+    border: 3px solid transparent;
+    border-top-color: transparentize($primary-color,.8);
+    border-bottom-color: transparentize($primary-color,.9);
+    background-clip: padding-box;
     border-radius: 50%;
     -webkit-animation: animationLoading 2s linear infinite;
     animation: animationLoading 2s linear infinite;
+    box-shadow: inset 0px 0px 10px transparentize($primary-color, 0.85)
   }
   .spinner3-inner {
     display: block;
     position: absolute;
     height: 2.5rem;
     width: 2.5rem;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-top-color: #fff;
     border-bottom-color: #fff;
+    box-shadow: inset 0px 0px 10px transparentize(#fff, 0.85);
     border-radius: 50%;
     -webkit-animation: animationLoading 1.5s linear infinite reverse;
     animation: animationLoading 1.5s linear infinite reverse;
