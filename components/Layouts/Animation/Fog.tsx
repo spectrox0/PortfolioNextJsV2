@@ -3,30 +3,44 @@ import Particle from "react-particles-js"
 import styled from 'styled-components'
 import {primaryColor} from '../../../helpers/styles'
 const Fog: React.FC = () => {
-    const [width,setWidth] = React.useState<number>(0)
-    React.useEffect(() => {
-        setWidth(window.innerWidth)
-        const handlingSize = () => {
-            setWidth(window.innerWidth)
-        }
-        addEventListener('resize', handlingSize)
-        return () => removeEventListener('resize', handlingSize)
-    }, [])
+
     return (
         <ParticleS params={{
+            fpsLimit: 60,
+            detectRetina: true,
             "particles": {
                 move: {
-                    speed: 3
+                    direction: 'none',
+                    enable: true,
+                    outMode: 'bounce',
+                    random: false,
+                    speed: 3,
+                    straight: false
                 },
                 "number": {
-                    "value": width>700? 80 : 40
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    },
+                    "value": 40
                 },
                 "size": {
+                    random: true,
                     "value": 3
                 },
                 "color": {
                     value: primaryColor,
-                }
+                },
+                links: {
+                    color: '#ffffff',
+                    distance: 150,
+                    enable: true,
+                    opacity: 0.5,
+                    width: 1
+                },
+                collisions: {
+                    enable: true
+                },
             },
             "interactivity": {
                 'detect_on': 'window',
@@ -34,6 +48,19 @@ const Fog: React.FC = () => {
                     "onhover": {
                         "enable": true,
                         "mode": "attract"
+                    },
+                    resize: true
+                },
+                modes: {
+                    bubble: {
+                        distance: 400,
+                        duration: 2,
+                        opacity: 0.8,
+                        size: 40,
+                    },
+                     attract: {
+                        distance: 200,
+                        duration: 0.4
                     }
                 }
             },
