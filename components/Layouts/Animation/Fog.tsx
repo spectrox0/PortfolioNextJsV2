@@ -30,6 +30,7 @@ const Fog: React.FC = () => {
                 },
                 "color": {
                     value: primaryColor,
+
                 },
                 links: {
                     color: '#ffffff',
