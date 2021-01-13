@@ -103,12 +103,9 @@ const SkillS = styled(motion.div)`
     background: rgba(255, 255, 255, 0.5);
     .line-progress {
       transform: translate3d(0, 0, 0);
-      overflow: visible;
       background: #fff;
-      width: 10rem;
       height: 0.15em;
       position: relative;
-      opacity: 0;
       &:after{
         content:"";
         position: absolute;
