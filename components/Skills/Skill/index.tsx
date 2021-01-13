@@ -112,7 +112,7 @@ const SkillS = styled(motion.div)`
         height: .9em;
         border-radius: 50%;
         width: .9em;
-        transform: translate3d(0, -50%, 0);
+        transform: translate3d(50%, -50%, 0);
         background: #fff;
         right: 0;
         top: 50%;
