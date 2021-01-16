@@ -1,15 +1,14 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { primaryColor } from '../../../helpers/styles'
-
+import {Icon} from '../../Icon'
 import { motion } from 'framer-motion'
 interface Props {
   delay: number
   name: string
   progress: number
-  icon: React.ReactElement
 }
-export default function Skill({ delay, name, progress, icon }: Props) {
+export default function Skill({ delay, name, progress }: Props) {
   const VariantLine = {
     initial: {
       width: 0,
@@ -38,7 +37,7 @@ export default function Skill({ delay, name, progress, icon }: Props) {
   return (
     <SkillS animate="enter" initial="initial" variants={VariantSkill}>
       <span className="label">
-        <span className="icon"> {icon}</span>
+        <span className="icon"> {Icon[name.toLowerCase()] && Icon[name.toLowerCase()]()}</span>
         <span className="name">{name}</span>
         <span className="progress">{progress}%</span>
       </span>

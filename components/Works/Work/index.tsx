@@ -32,13 +32,8 @@ const Work: React.FC<Props> = ({
                                    openModal,
                                    link,
                                }) => {
-    const [isLoad, setLoad] = React.useState<boolean>(false)
     const imgRef = React.useRef<HTMLImageElement>()
-    React.useEffect(() => {
-        if (imgRef.current && imgRef.current.complete) {
-            setLoad(true)
-        }
-    }, [])
+
     return (
         <WorkStyles
             height={height}
@@ -50,10 +45,9 @@ const Work: React.FC<Props> = ({
             }
         >
             <figure className="img-work">
-                <div className={`img ${isLoad ? 'active' : ''}`}>
+                <div className='img'>
                     <Image
                         ref={imgRef}
-                        loading="lazy"
                         alt="work-current"
                         publicId={`${img}.webp`}
                     >
@@ -73,16 +67,16 @@ const WorkVariant = {
             opacity: 0,
             originX: 0.5,
             originY: 0.5,
-            rotateY: '45deg',
+            scale: 0.6
 
     },
     enter: {
         opacity: 1,
-        rotateY: '0deg',
+        scale: 1,
         transition: {
             delay: 0.2,
             duration: 0.4,
-            ease: 'linear',
+            ease: 'easeInOut',
         },
     },
     }
@@ -93,19 +87,14 @@ const WorkStyles = styled(motion.span) <PropsStyled>`
   border-radius: 0;
   cursor: pointer;
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   transform: translate3d(0px, 0px, 0px);
-  height: ${props => props.height}px;
   overflow: hidden;
-
-  @media ${device.mobileM} {
-    height: ${props => props.height * 0.8}px;
-  }
   transform-origin: center center !important;
   opacity: 1;
   position: relative;
-
   .img-work {
     margin: 0;
     padding: 0;
@@ -116,15 +105,21 @@ const WorkStyles = styled(motion.span) <PropsStyled>`
     width: 100%;
     height: 100%;
     position: relative;
-
     .img {
+      display: flex;
+      align-items: center;
       width: 100%;
       height: 100%;
       transform: translate3d(0, 0, 0);
       transition: all linear 0.3s;
       position: relative;
       z-index: 2;
-
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+        min-height: 100% !important;
+      }
       &.active {
         .blur-image {
           display: none;
@@ -132,18 +127,7 @@ const WorkStyles = styled(motion.span) <PropsStyled>`
       }
     }
 
-    img {
-      &:nth-child(2) {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      width: 100%;
-      object-fit: cover;
-      object-position: center center;
-      min-height: 100%;
-    }
+   
   }
 
   .title {

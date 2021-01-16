@@ -17,15 +17,24 @@ oauth2Client.setCredentials({
         '1//04qrrHXiPfWKDCgYIARAAGAQSNwF-L9IrAb3BCaOAalKQnJWAOM00_x_fGCo2kM70xIgLNd3fKBZZA7SGgvqouS6rKAMaXkG-wJ8',
 })
 const accessToken = oauth2Client.getAccessToken()
+interface Payload {
+    subject: string
+    name: string
+    email:string
+    message: string
+}
 export default async (req: NextApiRequest, res: NextApiResponse) => {
 
-    const { subject, name, email, message } = req.body
+    const { subject, name, email, message } : Payload = req.body
 
     if (!subject || !name || !email || !message) {
         return res.send(false)
     }
     try {
-        let transporter = nodemailer.createTransport({
+
+        const transporter = nodemailer.createTransport({
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             service: 'gmail',
             auth: {
                 type: 'OAuth2',
@@ -41,15 +50,17 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         transporter.sendMail({
             from: `"${name} 👻" ${email}`, // sender address
             to: 'alejandro.velazco@correo.unimet.edu.ve', // list of receivers
-            subject: subject, // Subject line // plain text body
+            subject, // Subject line // plain text body
             html: `
-            <div style="height:20rem; display:flex; flex:1; align-items:center; justify-content:center; border:solid 1px #fff;" background-color: #141414; color: #fff; padding:1rem;>
+            <div style="height:20rem; display:flex; flex:1; align-items:center; justify-content:center; border:solid 1px #fff;" >
              <p style="padding:1rem;" > EMAIL : ${email}  </p> 
              <p style="padding:1rem;"> NAME : ${name}  </p> 
              <p style="padding:1rem;"> SUBJECT : ${subject}  </p> 
              <p style="padding:1rem;"> MESSAGE : ${message}  </p> 
              </div>`, // html body
-        }, ({ message }) => { console.log('Message sent: %s', message) })
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        },  // @ts-ignore
+            ({ message }) => { console.log('Message sent: %s', message) })
         // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
         transporter.close()
         return res.send(true)
