@@ -125,13 +125,13 @@ const AboutMe:React.FC = () => {
                       <li>
                         <span className="title"> Frontend </span>
                         <p>
-                          Client Side , Vue.js, Angular +2 and React.js and
+                          Client Side , Vue.js, Angular +2 , React.js &
                           React Native
                         </p>
                       </li>
                       <li>
-                        <span className="title">Machine Learning</span>
-                        <p>Machine Learning and AI with Python</p>
+                        <span className="title">Data Science</span>
+                        <p>Python, R , Pandas ,Spicy, Scikit-learn, TensorFlow , Pytorch , Keras , Kaggle ,etc. </p>
                       </li>
                     </ul>
                   </div>

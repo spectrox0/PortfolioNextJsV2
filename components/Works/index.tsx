@@ -156,7 +156,6 @@ const WorksS = styled(motion.section) <PropsStyled>`
     transition: left .3s ease, top .3s ease;
     padding: .1rem;
     display: flex;
-    
   }
   .grid {
     width: 100%;
