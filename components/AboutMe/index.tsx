@@ -100,7 +100,7 @@ const AboutMe:React.FC = () => {
                         <span className="title"> FullStack Developer </span>
                         <div className="details-wrapper">
                           <FaBusinessTime />
-                          <p className="details">2020 - Present | EasyMGT</p>
+                          <p className="details">2020 - 2021</p>
                         </div>
                       </li>
                       <li>
