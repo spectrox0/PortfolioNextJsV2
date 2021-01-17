@@ -81,11 +81,11 @@ const ContactMe: React.FC = () => {
                 </a>
                 <a
                   className="icon"
-                  href="https://www.instagram.com/thebetrayerd/"
+                  href="https://t.me/darkdeveloperx"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaInstagram />
+                  <Icon.telegram/>
                 </a>
 
                 <a

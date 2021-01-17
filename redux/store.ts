@@ -12,20 +12,24 @@ import {
 } from './actionTypes'
 import { AnyAction } from 'redux'
 import Work from '../models/Work'
+import {Certificate}   from "../models/Certificates"
+
 interface State {
-    work?: object,
+    work?: Work,
     loadingWorks: boolean,
     errorWorks: boolean,
     isOpen: false,
     works: Work[]
+    certificates: Certificate[]
 }
 
 const initialState: State = {
-    work: null,
+    work: undefined,
     loadingWorks: false,
     errorWorks: false,
     isOpen: false,
     works: [],
+    certificates:[]
 }
 
 
@@ -54,10 +58,10 @@ const reducer = (state: State & any = initialState, action: AnyAction) => {
             }
         }
         case SUCCESS_GET_WORKS: {
-            const { works } = action.payload
+            const data = action.payload
             return {
                 ...state,
-                works,
+                ...data,
                 loadingWorks: false,
             }
         }

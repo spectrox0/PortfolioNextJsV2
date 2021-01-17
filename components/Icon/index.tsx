@@ -1,6 +1,7 @@
 /* eslint-disable react/display-name */
 import React from 'react';
-import {FaGithub, FaInstagram, FaLinkedin, FaFacebook ,
+import {
+    FaGithub, FaInstagram, FaLinkedin, FaFacebook,
     FaAngular,
     FaBootstrap,
     FaJava,
@@ -11,7 +12,8 @@ import {FaGithub, FaInstagram, FaLinkedin, FaFacebook ,
     FaPython,
     FaReact,
     FaSymfony,
-    FaVuejs,} from 'react-icons/fa'
+    FaVuejs, FaTelegram,
+} from 'react-icons/fa'
 import {DiCss3, DiDjango, DiFirebase, DiMongodb, DiMysql,} from 'react-icons/di'
 import {GrGraphQl} from 'react-icons/gr'
 import {
@@ -32,6 +34,7 @@ interface Props {
 }
 
 export const Icon = {
+    'telegram': (props ?: Props): JSX.Element => <FaTelegram {...props}/>,
     'github': (props ?: Props): JSX.Element => <FaGithub {...props}/>,
     'facebook': (props ?: Props): JSX.Element => <FaFacebook {...props}/>,
     'instagram': (props ?: Props): JSX.Element => <FaInstagram {...props}/>,

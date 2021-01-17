@@ -1,42 +1,35 @@
 import { GET_WORKS, SUCCESS_GET_WORKS, FAILURE_GET_WORKS } from '../actionTypes'
 import { db } from '../../firebase.config'
-import Work from "../../models/Work"
-export const getWorks = (payload?: object) => ({
+export const getData = (payload = {}) => ({
   type: GET_WORKS,
   ...payload,
 })
 
-export const failureGetWorks = (payload: object = {}) => ({
+export const failureGetData = (payload ={}) => ({
   type: FAILURE_GET_WORKS,
   ...payload,
 })
 
-export const successGetWorks = (payload: object = {}) => ({
+export const successGetData = (payload: object = {}) => ({
   type: SUCCESS_GET_WORKS,
   ...payload,
 })
-
-export const fetchWorks = () => {
-  return (dispatch: Function) => {
-    dispatch(getWorks())
+interface ParamsFetchData {
+  collectionName: string
+}
+export const fetchData = ({collectionName} : ParamsFetchData) => {
+  return (dispatch: (action) => void) => {
+    dispatch(getData())
     try {
-      db.collection('works').onSnapshot(snapshots => {
-        const works: Work[] = []
-        snapshots.forEach(doc => works.push({ ...doc.data(), id: doc.id } as Work))
-        dispatch(successGetWorks({ payload: { works } }))
+      db.collection(collectionName).onSnapshot(snapshots => {
+        const arr: any[] = []
+        snapshots.forEach(doc => arr.push({ ...doc.data(), id: doc.id }))
+        dispatch(successGetData({ payload: { [collectionName]: arr } }))
       })
     } catch (error) {
       console.log(error)
-      dispatch(failureGetWorks({ payload: { error: 'Error ' } }))
+      dispatch(failureGetData({ payload: { error: 'Error ' } }))
     }
 
-    /* axios
-      .get('https://django-api-portfolio.herokuapp.com/api/works/')
-      .then(({ data }) => {
-        dispatch(successGetWorks({ payload: { works: data } }))
-      })
-      .catch(error => {
-        dispatch(failureGetWorks({ payload: { error: 'Error ' } }))
-      })*/
   }
 }
