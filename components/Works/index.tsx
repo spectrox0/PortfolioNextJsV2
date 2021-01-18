@@ -107,7 +107,6 @@ export default function Works({works}: Props) {
                             .map(work => (
                                 <XBlock key={work.id} width={2} >
                                     <Work
-                                        key={work.id}
                                         title={work.name}
                                         height={work.height}
                                         date={work.createdAt.seconds * 1000}

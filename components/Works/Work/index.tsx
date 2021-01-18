@@ -17,9 +17,6 @@ interface Props {
     date: number
 }
 
-interface PropsStyled {
-    height: number
-}
 
 const Work: React.FC<Props> = ({
                                    title,
@@ -28,7 +25,6 @@ const Work: React.FC<Props> = ({
                                    categories,
                                    content,
                                    date,
-                                   height,
                                    openModal,
                                    link,
                                }) => {
@@ -36,7 +32,6 @@ const Work: React.FC<Props> = ({
 
     return (
         <WorkStyles
-            height={height}
             initial="initial"
             animate="enter"
             variants={WorkVariant}
@@ -80,7 +75,7 @@ const WorkVariant = {
         },
     },
     }
-const WorkStyles = styled(motion.span) <PropsStyled>`
+const WorkStyles = styled(motion.span)`
   z-index: 2;
   color: #ffffff;
   background: transparent;

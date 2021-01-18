@@ -56,10 +56,6 @@ const AboutMe: React.FC = () => {
                                     <div className='list-data'>
                                         <ul>
                                             <li>
-                                                <span>Birthday:</span>
-                                                <span> 12 Mar 1996 </span>
-                                            </li>
-                                            <li>
                                                 <span>Age:</span>
                                                 <span> 23 </span>
                                             </li>
