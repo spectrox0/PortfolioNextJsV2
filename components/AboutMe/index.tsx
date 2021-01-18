@@ -32,11 +32,14 @@ const AboutMe: React.FC = () => {
                         {data && (
                             <>
                                 <div className={`img ${imageLoad ? 'active' : ''}`}>
+                                    <div className='img-lazy'>
                                     <img
                                         alt="me"
                                         src={require('images/alejandro velazco.jpg?lqip')}
                                     />
+                                    </div>
                                     <img
+                                        className={'img-real'}
                                         alt="alejandro velazco"
                                         ref={imgRef}
                                         src={require('images/alejandro velazco.jpg?webp')}
@@ -134,7 +137,7 @@ const InputAnimationImg = keyframes`
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0) rotate(225deg) scale(1)
+    transform: translate3d(0, 0, 0) rotate(225deg) scale(1.05)
   }
 `
 const AboutMeStyle = styled(motion.section)`
@@ -178,9 +181,7 @@ const AboutMeStyle = styled(motion.section)`
       }
     }
   }
-  .container-services {
-  display: fl
-  }
+
   .services {
     display: flex;
     flex-wrap: wrap;
@@ -309,7 +310,24 @@ const AboutMeStyle = styled(motion.section)`
   padding: 1rem;
   position: relative;
   transform: translate3d(0, 0, 0);
+  
 
+  &.active {
+    .img-lazy{
+      &:after {
+        animation: ${InputAnimationImg} 0.8s ease-in-out 0.3s forwards;
+      }
+    }
+    img {
+      opacity: 1;
+    }
+    
+  }
+}
+
+.img-lazy {
+  width: 100%;
+  position: relative;
   &:after {
     content: '';
     display: block;
@@ -326,7 +344,6 @@ const AboutMeStyle = styled(motion.section)`
     border-left-color: ${primaryColor};
     border-right-color: ${primaryColor};
   }
-
   &:before {
     content: '';
     display: block;
@@ -339,35 +356,27 @@ const AboutMeStyle = styled(motion.section)`
     width: 100%;
     height: 100%;
     border: 1px solid transparent;
-    transform: translate3d(0, 0, 0) scale(.96);
+    transform: translate3d(0, 0, 0) scale(1.02);
     border-top-color: #fff;
     border-bottom-color: #fff;
   }
-
-  &.active {
-    img {
-      opacity: 1;
-    }
-
-    &:after {
-      animation: ${InputAnimationImg} 0.8s ease-in-out 0.3s forwards;
-    }
-  }
+  
 }
-
 img {
   width: 100%;
   object-fit: cover;
   object-position: center center;
   border-radius: 50%;
-
-  &:nth-child(2) {
+  &.img-real {
     position: absolute;
     opacity: 0;
     padding: 1rem;
     transition: opacity 1s ease-in-out;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    
   }
 }
 
