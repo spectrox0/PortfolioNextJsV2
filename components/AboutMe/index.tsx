@@ -190,8 +190,6 @@ const AboutMeStyle = styled(motion.section)`
   .services {
     display: flex;
     flex-wrap: wrap;
-
-
     .item {
       display: flex;
       flex: 1;
@@ -238,8 +236,7 @@ const AboutMeStyle = styled(motion.section)`
     color: #fff;
     text-transform: capitalize;
   }
-
-  margin: 0.4em;
+  
 }
 
 .list-data {

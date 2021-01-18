@@ -192,6 +192,7 @@ nav {
 
   @media (max-width: 768px) {
     transform: translateX(-100%);
+    background-color: rgba(27, 28, 36, .3);
     &.open {
       transform: translateX(0);
     }
