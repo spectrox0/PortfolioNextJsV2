@@ -6,4 +6,5 @@ export interface Certificate {
     createdAt: Timestamp
     categories: string[]
     image: string[]
+    link?: string,
 }

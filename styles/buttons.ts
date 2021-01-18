@@ -8,6 +8,7 @@ interface PropsBtn {
     flexGrow?: number,
     flexShrink?: number,
     flexBasis?: string | number,
+    margin?: string | number,
 }
 
 export const Btn = styled.button<PropsBtn & React.HtmlHTMLAttributes<HTMLButtonElement> & React.HTMLProps<HTMLButtonElement>>`
@@ -15,8 +16,8 @@ export const Btn = styled.button<PropsBtn & React.HtmlHTMLAttributes<HTMLButtonE
   color: ${({color}) => color};
   outline: none;
   white-space: nowrap;
+  margin: ${({margin}) => margin };
   text-align: center;
-  margin: 0.5rem;
   background: rgba(27, 28, 36, .3);
   justify-content: center;
   padding: 0.7rem;
@@ -45,5 +46,6 @@ Btn.defaultProps = {
     colorHover: primaryColor,
     flexGrow: 0,
     flexShrink:1,
-    flexBasis: '0%'
+    flexBasis: '0%',
+    margin: '0.5rem'
 }

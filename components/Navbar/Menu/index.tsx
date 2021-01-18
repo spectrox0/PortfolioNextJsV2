@@ -16,27 +16,27 @@ interface Item {
 }
 const items: Item[] = [
   {
-    icon: <AiOutlineHome size="2.2em" />,
+    icon: <AiOutlineHome size="2em" />,
     name: 'Home',
     link: '/',
   },
   {
-    icon: <RiContactsLine size="2em" />,
+    icon: <RiContactsLine size="1.9em" />,
     name: 'About me',
     link: '/about',
   },
   {
-    icon: <RiEqualizerLine size="2em" />,
+    icon: <RiEqualizerLine size="1.9em" />,
     name: 'Skills',
     link: '/skills',
   },
   {
-    icon: <AiOutlineAppstore size="2.2em" />,
+    icon: <AiOutlineAppstore size="2em" />,
     name: 'Works',
     link: '/works',
   },
   {
-    icon: <AiOutlineContacts size="2.2em" />,
+    icon: <AiOutlineContacts size="2em" />,
     name: 'Contact',
     link: '/contact',
   },

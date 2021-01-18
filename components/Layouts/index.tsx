@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Navbar from "../Navbar";
 import Fog from './Animation/Fog'
 import dynamic from 'next/dynamic'
-const Navbar = dynamic(() => import('../Navbar'), { ssr: false })
+
 interface Props {
   children?: React.ReactElement[]
 }

@@ -32,12 +32,7 @@ export default function Navbar() {
                                rel="noopener noreferrer">
                                 <Icon.linkedin/>
                             </a>
-                            <a className="icon"
-                               href="https://www.facebook.com/alejandro.velazco.14"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                <Icon.facebook/>
-                            </a>
+
                             <a
                                 className="icon"
                                 href="https://t.me/darkdeveloperx"

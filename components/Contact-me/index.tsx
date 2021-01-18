@@ -96,14 +96,7 @@ const ContactMe: React.FC = () => {
                 >
                   <FaGithub />
                 </a>
-                <a
-                  className="icon"
-                  href="https://www.facebook.com/alejandro.velazco.14"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaFacebook />
-                </a>
+
               </div>
             </motion.div>
           </div>
