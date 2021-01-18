@@ -5,7 +5,7 @@ import {AiOutlineClockCircle, AiOutlineDesktop, AiOutlineMobile,} from 'react-ic
 import data from '../../data/about.json'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import {motion} from 'framer-motion'
-import {Title, Subtitle} from '../../styles/titles'
+import {Subtitle, Title} from '../../styles/titles'
 import {Btn} from '../../styles/buttons'
 
 const AboutMe: React.FC = () => {
@@ -33,10 +33,10 @@ const AboutMe: React.FC = () => {
                             <>
                                 <div className={`img ${imageLoad ? 'active' : ''}`}>
                                     <div className='img-lazy'>
-                                    <img
-                                        alt="me"
-                                        src={require('images/alejandro velazco.jpg?lqip')}
-                                    />
+                                        <img
+                                            alt="me"
+                                            src={require('images/alejandro velazco.jpg?lqip')}
+                                        />
                                     </div>
                                     <img
                                         className={'img-real'}
@@ -56,6 +56,10 @@ const AboutMe: React.FC = () => {
                                     <div className='list-data'>
                                         <ul>
                                             <li>
+                                                <span>Birthday:</span>
+                                                <span> 12 Mar 1996 </span>
+                                            </li>
+                                            <li>
                                                 <span>Age:</span>
                                                 <span> 23 </span>
                                             </li>
@@ -68,17 +72,20 @@ const AboutMe: React.FC = () => {
                                                 <span> Bachelor	 </span>
                                             </li>
                                             <li>
+                                                <span> Freelance: </span>
+                                                <span>  Available </span>
+                                            </li>
+                                            <li>
                                                 <span> Mail: </span>
                                                 <span>  alejanvelazco2008@hotmail.com </span>
                                             </li>
-                                            <li>
-                                                <span>Linkedin:</span>
-                                                <span> /alejandro-velazco-rodriguez-849785169/ </span>
-                                            </li>
                                         </ul>
+                                        <a href={"/pdf/Alejandro's Resume (2).pdf"} download>
                                         <Btn margin={'1rem'} >
-                                            My Resume (...soon)
+                                            Download My CV
+
                                         </Btn>
+                                        </a>
                                     </div>
                                 </div>
                             </>
@@ -117,8 +124,10 @@ export default AboutMe;
 const AboutMeVariant = {
     initial: {
         opacity: 0,
+        y: 50,
     },
     enter: {
+        y:0,
         opacity: 1,
         transition: {
             duration: 0.4,
@@ -310,24 +319,26 @@ const AboutMeStyle = styled(motion.section)`
   padding: 1rem;
   position: relative;
   transform: translate3d(0, 0, 0);
-  
+
 
   &.active {
-    .img-lazy{
+    .img-lazy {
       &:after {
         animation: ${InputAnimationImg} 0.8s ease-in-out 0.3s forwards;
       }
     }
+
     img {
       opacity: 1;
     }
-    
+
   }
 }
 
 .img-lazy {
   width: 100%;
   position: relative;
+
   &:after {
     content: '';
     display: block;
@@ -344,6 +355,7 @@ const AboutMeStyle = styled(motion.section)`
     border-left-color: ${primaryColor};
     border-right-color: ${primaryColor};
   }
+
   &:before {
     content: '';
     display: block;
@@ -360,13 +372,15 @@ const AboutMeStyle = styled(motion.section)`
     border-top-color: #fff;
     border-bottom-color: #fff;
   }
-  
+
 }
+
 img {
   width: 100%;
   object-fit: cover;
   object-position: center center;
   border-radius: 50%;
+
   &.img-real {
     position: absolute;
     opacity: 0;
@@ -374,9 +388,9 @@ img {
     transition: opacity 1s ease-in-out;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 
-    
+
   }
 }
 
