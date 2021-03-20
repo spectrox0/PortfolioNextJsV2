@@ -9,6 +9,7 @@ import {motion} from 'framer-motion'
 import WorkModel from '../../models/Work'
 import {Title} from '../../styles/titles'
 import {Btn} from '../../styles/buttons'
+import {useIntl} from "react-intl";
 
 interface Props {
     works: WorkModel[]
@@ -22,13 +23,13 @@ interface PropsStyled {
 
 
 export default function Works({works}: Props) {
-    const ops: string[] = ['ALL', 'VUE', 'ANGULAR', 'REACT', 'PWA', 'NODEJS']
+    const {formatMessage : t} = useIntl()
+    const ops: string[] = [t({id:'all'}), 'VUE', 'ANGULAR', 'REACT', 'PWA', 'NODEJS']
     const [currentOp, setCurrentOp] = React.useState<number>(0)
    // const [width, setWidth] = React.useState<number>(0)
     const {isOpen} = useSelector(state => ({
         ...state
     }))
-
     const workss = () => {
         return works.filter(work =>
             currentOp
@@ -86,7 +87,7 @@ export default function Works({works}: Props) {
             <PerfectScrollbar>
                 <div className="container">
                     <Title textAlign='center' fontWeight={700} color={primaryColor} margin={"2rem 0"}>
-                        Works <span className='shadow'> Works</span>
+                        {t({id:'works'})} <span className='shadow'>  {t({id:'works'})}</span>
                     </Title>
                     <div className="switch">
                         {ops.map((item, i) => (

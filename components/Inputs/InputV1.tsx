@@ -5,8 +5,9 @@ interface Props {
   icon: React.ReactElement,
   id: string,
   name: string,
+  label?: string
 }
-export default function Input({ icon, id, name, ...rest }: Props & React.HTMLProps<HTMLInputElement> & React.HTMLAttributes<HTMLButtonElement>) {
+export default function Input({ icon, id, name,label, ...rest }: Props & React.HTMLProps<HTMLInputElement> & React.HTMLAttributes<HTMLButtonElement>) {
   return (
     <div className="input-container">
       <input name={name} id={id} {...rest} />
@@ -15,7 +16,7 @@ export default function Input({ icon, id, name, ...rest }: Props & React.HTMLPro
           {icon}
         </label>
         <label htmlFor={id} className="label-name">
-          {name}
+          {label || name}
         </label>
       </div>
     </div>

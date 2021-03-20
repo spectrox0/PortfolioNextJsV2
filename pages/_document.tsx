@@ -24,8 +24,10 @@ class MyDocument extends Document<Props> {
     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
     render() {
         const { styleTags } = this.props
+        const {locale} = this.props.__NEXT_DATA__
+        console.log(locale)
         return (
-            <Html lang="en">
+            <Html lang={locale}>
                 <Head>
                     <meta charSet="utf-8" />
                     <meta

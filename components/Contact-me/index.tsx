@@ -2,12 +2,14 @@ import React from 'react'
 import Form from './Form'
 import styled from 'styled-components'
 import { primaryColor, grayColor } from '../../helpers/styles'
-import { FaGithub, FaInstagram, FaLinkedin, FaFacebook } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import {Icon} from '../Icon'
 import { MdPhone, MdMail } from 'react-icons/md'
 import PerfectScroll from 'react-perfect-scrollbar'
 import { motion } from 'framer-motion'
 import {Title} from '../../styles/titles'
+import {useIntl} from "react-intl";
+import {useRouter} from "next/router";
 const ContactVariant = {
   initial: {
     opacity: 0,
@@ -40,6 +42,8 @@ const DataContactVariant = {
   },
 }
 const ContactMe: React.FC = () => {
+
+  const {locale} = useRouter()
   return (
     <ContactS
       id="contact-me"
@@ -51,7 +55,9 @@ const ContactMe: React.FC = () => {
       <PerfectScroll>
         <div className="container">
           <Title margin={'2rem 0'}>
-            <span className='word2'> Contact</span> me
+              {locale === 'es' ? <span className='word2'> Contacto</span> :
+                  <>  <span className='word2'> Contact</span> me </>
+              }
           </Title>
 
           <div className="grid">

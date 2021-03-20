@@ -9,8 +9,10 @@ import {motion} from 'framer-motion'
 import {Title} from '../../styles/titles'
 import {Btn} from '../../styles/buttons'
 import {ops, skills} from '../../helpers/constants'
+import {useIntl} from "react-intl";
 
 const Skills: React.FC = ():JSX.Element => {
+    const {formatMessage : t} = useIntl()
     const [currentOp, setCurrentOp] = React.useState<number>(0)
     const SkillVariant = {
         initial: {
@@ -40,7 +42,7 @@ const Skills: React.FC = ():JSX.Element => {
             <PerfectScroll>
                 <div className="container">
                     <Title>
-                        My <span className='word2'> Skills</span>
+                        {t({id:'my'})} <span className='word2'> {t({id:'skills'})}</span>
                     </Title>
                     <div className="wrappers">
                         <div className="switch">

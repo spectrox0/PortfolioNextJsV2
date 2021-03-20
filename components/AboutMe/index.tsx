@@ -7,9 +7,12 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import {motion} from 'framer-motion'
 import {Subtitle, Title} from '../../styles/titles'
 import {Btn} from '../../styles/buttons'
+import {useIntl} from "react-intl";
+import {useRouter} from "next/router";
 
 const AboutMe: React.FC = () => {
-
+    const {formatMessage : t} = useIntl()
+    const {locale} = useRouter()
     const [imageLoad, setImage] = React.useState<boolean>(false)
     const imgRef = React.useRef<HTMLImageElement>(null)
     React.useEffect(() => {
@@ -49,18 +52,21 @@ const AboutMe: React.FC = () => {
 
                                 <div className="biography">
                                     <Title>
-                                        <span className="word2">About </span> me
+                                        {locale=='es'?
+                                            <span className="word2">Acerca de mi </span>
+                                         : <>   <span className="word2">About </span> me </>
+                                        }
                                     </Title>
-                                    <p>{data.text}</p>
+                                    <p>{t({id:'description about me'})}</p>
 
                                     <div className='list-data'>
                                         <ul>
                                             <li>
-                                                <span>Age:</span>
+                                                <span>{t({id:'age'})}:</span>
                                                 <span> 23 </span>
                                             </li>
                                             <li>
-                                                <span>Residence:</span>
+                                                <span>{t({id:'residence'})}:</span>
                                                 <span> Caracas, Venezuela </span>
                                             </li>
                                             <li>
@@ -78,7 +84,7 @@ const AboutMe: React.FC = () => {
                                         </ul>
                                         <a href={"/pdf/Alejandro's Resume (2).pdf"} download>
                                         <Btn margin={'1rem'} >
-                                            Download My CV
+                                            {t({id:'download my cv'})}
 
                                         </Btn>
                                         </a>
@@ -89,23 +95,23 @@ const AboutMe: React.FC = () => {
                     </div>
                     <div className='services-container'>
                         <Subtitle margin={"1rem 0"} textAlign={'center'}>
-                            My <span className="word2">Services</span>
+                            {t({id:'my'})} <span className="word2">{t({id:'services'})}</span>
                         </Subtitle>
                         <div className="services">
                             <div className="item">
                                 <AiOutlineDesktop/>
-                                <span> Web Development </span>
+                                <span>{t({id:'web development'})} </span>
                                 <p> Complete development of websites.</p>
                             </div>
 
                             <div className="item">
                                 <AiOutlineClockCircle/>
-                                <span> Fast Delivery </span>
+                                <span>{t({id:'fast delivery'})} </span>
                                 <p>fast application development with punctual delivery times</p>
                             </div>
                             <div className="item">
                                 <AiOutlineMobile/>
-                                <span> App Development </span>
+                                <span> {t({id:'app development'})} </span>
                                 <p> Development of mobile and desktop applications </p>
                             </div>
                         </div>
@@ -208,6 +214,7 @@ const AboutMeStyle = styled(motion.section)`
       }
 
       span {
+        text-transform: capitalize;
         text-align: center;
         font-size: 1.5em;
         font-weight: 600;
@@ -284,6 +291,7 @@ const AboutMeStyle = styled(motion.section)`
       span {
         &:first-child {
           font-weight: 600;
+          text-transform: capitalize;
           margin-right: 1rem;
         }
       }
