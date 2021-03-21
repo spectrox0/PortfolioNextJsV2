@@ -36,12 +36,16 @@ export default function Form() {
             ) => {
                 setSubmitting(true)
                 setLoading(true)
-                const {data} = await axios.post('/api/contact', {
-                    name,
-                    email,
-                    subject,
-                    message,
-                })
+                try {
+                    const {data} = await axios.post('/api/send-mail', {
+                        name,
+                        email,
+                        subject,
+                        message,
+                    })
+                } catch (err) {
+                    console.log(err)
+                }
                 resetForm()
                 setLoading(false)
                 return setSubmitting(false)
@@ -70,7 +74,7 @@ export default function Form() {
                         <Input
                             id="name"
                             name="name"
-                            label={t({id:'name'})}
+                            label={t({id: 'name'})}
                             icon={<MdAccountCircle/>}
                             type="text"
                             value={values.name}
@@ -89,7 +93,7 @@ export default function Form() {
                         <Input
                             id="subject"
                             name="subject"
-                            label={t({id:'subject'})}
+                            label={t({id: 'subject'})}
                             icon={<MdSubject/>}
                             type="text"
                             value={values.subject}
@@ -107,13 +111,13 @@ export default function Form() {
               />
                             <div className={`input ${values.message && 'text'}`}>
                                 <label className="label-name" htmlFor="message">
-                                    {t({id:'message'})}
+                                    {t({id: 'message'})}
                                 </label>
                             </div>
                         </div>
 
                         <Btn type="submit">
-                            {t({id:'send'})}
+                            {t({id: 'send'})}
                         </Btn>
                     </motion.form>
                 </>
