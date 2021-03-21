@@ -75,7 +75,7 @@ const AboutMe: React.FC = () => {
                                             </li>
                                             <li>
                                                 <span> Freelance: </span>
-                                                <span>  Available </span>
+                                                <span> {t({id: 'available'})} </span>
                                             </li>
                                             <li>
                                                 <span> Mail: </span>
@@ -101,18 +101,18 @@ const AboutMe: React.FC = () => {
                             <div className="item">
                                 <AiOutlineDesktop/>
                                 <span>{t({id:'web development'})} </span>
-                                <p> Complete development of websites.</p>
+                                <p> {t({id:'web development.description'})}</p>
                             </div>
 
                             <div className="item">
                                 <AiOutlineClockCircle/>
                                 <span>{t({id:'fast delivery'})} </span>
-                                <p>fast application development with punctual delivery times</p>
+                                <p>{t({id:'fast delivery.description'})} </p>
                             </div>
                             <div className="item">
                                 <AiOutlineMobile/>
                                 <span> {t({id:'app development'})} </span>
-                                <p> Development of mobile and desktop applications </p>
+                                <p> {t({id:'app development.description'})} </p>
                             </div>
                         </div>
                     </div>
@@ -289,9 +289,9 @@ const AboutMeStyle = styled(motion.section)`
       }
 
       span {
+        text-transform: capitalize;
         &:first-child {
           font-weight: 600;
-          text-transform: capitalize;
           margin-right: 1rem;
         }
       }

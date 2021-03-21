@@ -28,5 +28,10 @@
   "my": "mis",
   "description about me": "Ingeniero de Sistemas egresado de la Universidad Metropolitana de Venezuela, actualmente estoy enfocado y trabajo principalmente en el desarrollo web fullstack en el cual tengo más de 3 años de experiencia, me interesa el mundo de la Ciencia de Datos. Actualmente trabajo para Tower House Studio, una empresa de software ubicada en Montevideo Uruguay.",
   "bachelor": "bachelor",
-  "web development": "desarrollo web"
+  "web development": "desarrollo web",
+  "web development.description": "Completo desarrollo de sitios web",
+  "fast delivery.description": "Rapido desarrollo con tiempos de entrega puntuales",
+  "app development.description" : "Desarrollo de aplicaciones mobiles y de escritorio",
+  "available": "disponible",
+  "degree": "degree"
 }

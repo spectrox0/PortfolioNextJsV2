@@ -5,6 +5,7 @@ import { FaLink } from 'react-icons/fa'
 import { TiArrowBackOutline } from 'react-icons/ti'
 import { useSelector, useDispatch } from 'react-redux'
 import { Image, Transformation } from 'cloudinary-react'
+import {useRouter} from "next/router";
 const options = {
   timeZone: 'UTC',
   year: 'numeric',
@@ -22,6 +23,7 @@ export default function Modal() {
     ...state,
   }))
   const dispatch = useDispatch()
+  const {locale} = useRouter()
   const [currentImage, setCurrentImage] = React.useState(0)
   React.useEffect(() => {
     setCurrentImage(0)
@@ -85,7 +87,7 @@ export default function Modal() {
               {' '}
               {currentWork &&
                 new Date(currentWork.date).toLocaleString(
-                  'en-VE',
+                  `${locale}-VE`,
                   options
                 )}{' '}
             </span>

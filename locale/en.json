@@ -28,5 +28,10 @@
   "my": "my",
   "description about me": "Systems Engineer graduated from the Metropolitan University of Venezuela, currently I am mainly focused and work in fullstack web development in which I have more than 3 years of experience, I am interested in the world of Data Science. I currently work for Tower House Studio, a software company located in Montevideo Uruguay",
   "bachelor": "bachiller",
-  "web development": "web development"
+  "web development": "web development",
+  "web development.description": "Complete development of websites",
+  "fast delivery.description": "Fast application development with punctual delivery times",
+  "app development.description" : "Development of mobile and desktop applications",
+  "available": "available",
+  "degree": "degree"
 }
