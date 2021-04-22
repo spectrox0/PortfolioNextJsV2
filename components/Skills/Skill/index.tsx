@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { primaryColor } from '../../../helpers/styles'
-import {Icon} from '../../Icon'
+import {Icon} from '../../atoms/Icon'
 import { motion } from 'framer-motion'
 interface Props {
   delay: number

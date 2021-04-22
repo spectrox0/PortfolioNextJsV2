@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 import Menu from './Menu'
 import Toggle from './Toggle'
 import PerfectScrollbar from 'react-perfect-scrollbar'
-import {Icon} from '../Icon/index'
+import {Icon} from '../atoms/Icon/index'
 import {useRouter} from "next/router";
 import Flag from 'country-flag-icons/react/1x1'
 

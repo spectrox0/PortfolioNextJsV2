@@ -10,6 +10,7 @@
   "dependencies": {
     "@types/masonry-layout": "^4.2.2",
     "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
     "cloudinary-react": "^1.6.8",
     "country-flag-icons": "^1.2.9",
     "dotenv": "^8.2.0",
@@ -24,6 +25,7 @@
     "imagemin-optipng": "^8.0.0",
     "jimp": "^0.16.1",
     "lqip-loader": "^2.2.1",
+    "mdbreact": "^5.0.2",
     "next": "10.0.5",
     "next-i18next": "^8.1.2",
     "next-optimized-images": "^2.6.2",

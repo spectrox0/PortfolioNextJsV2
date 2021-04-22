@@ -1,6 +1,6 @@
 import React from 'react'
 import Fog from './Animation/Fog'
-import dynamic from 'next/dynamic'
+import Navbar from '../Navbar'
 
 interface Props {
   children?: React.ReactElement[]
@@ -8,7 +8,6 @@ interface Props {
 
 const bg: string = require('images/bg/bg8.jpg?webp');
 
-const Navbar = dynamic(() => import("../Navbar"), {ssr: false})
 export default function Layout({ children }: Props) {
 
   return (

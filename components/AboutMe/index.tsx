@@ -201,8 +201,6 @@ const AboutMeStyle = styled(motion.section)`
       flex: 1;
       margin: .5rem;
       background-color: rgba(27, 28, 36, .1);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
       border: solid 1px rgba(255, 255, 255, 0.5);
       flex-direction: column;
       align-items: center;

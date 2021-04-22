@@ -10,8 +10,6 @@ nav {
   left: 0;
   z-index: 10;
   background-color: rgba(27, 28, 36, .1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   color: #fff;
   transition: transform 0.4s linear;
 
@@ -48,7 +46,6 @@ nav {
       height: 1.5rem;
       border-radius: 50%;
       border: solid 1px $primary-color;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
       margin: .5rem 0;
       cursor: pointer;
       transition: all .4s ease-in-out;

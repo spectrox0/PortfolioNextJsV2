@@ -6,22 +6,32 @@ interface Props {
 }
 
 class MyDocument extends Document<Props> {
-    static async getInitialProps({ renderPage }) {
-        // Step 1: Create an instance of ServerStyleSheet
-        const sheet: any = new ServerStyleSheet()
+  static async getInitialProps(ctx) {
+        const sheet = new ServerStyleSheet();
+        const originalRenderPage = ctx.renderPage;
+        try {
+            ctx.renderPage = () =>
+                originalRenderPage({
+                    enhanceApp: (App) => (props) =>
+                        sheet.collectStyles(<App {...props} />),
+                });
 
-        // Step 2: Retrieve styles from components in the page
-        const page = renderPage(App => props =>
-            sheet.collectStyles(<App {...props} />)
-        )
-
-        // Step 3: Extract the styles as <style> tags
-        const styleTags = sheet.getStyleElement()
-
-        // Step 4: Pass styleTags as a prop
-        return { ...page, styleTags }
+            const initialProps = await Document.getInitialProps(ctx);
+            return {
+                ...initialProps,
+                styles: (
+                    <>
+                        {initialProps.styles}
+                        {sheet.getStyleElement()}
+                    </>
+                ),
+            };
+        } finally {
+            sheet.seal();
+        }
     }
-    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type,@typescript-eslint/explicit-module-boundary-types
     render() {
         const { styleTags } = this.props
         const {locale} = this.props.__NEXT_DATA__

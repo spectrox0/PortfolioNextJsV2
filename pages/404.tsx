@@ -1,17 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
-import { primaryColor } from '../helpers/styles'
+import {primaryColor} from '../helpers/styles'
 import Head from 'next/head'
-import { motion } from 'framer-motion'
-const Error404 : React.FC = () => {
+import {motion} from 'framer-motion'
+
+const Error404: React.FC = () => {
   return (
-    <ErrorS
-      animate={{ opacity: 1, scale: 1, transition: { duration: 0.5 } }}
-      initial={{ opacity: 0, scale: 0.5 }}
-      exit={{ opacity: 0 }}
-    >
-      <Head>
-        <title>404 Portfolio</title>
+      <ErrorS
+          animate={{opacity: 1, scale: 1, transition: {duration: 0.5}}}
+          initial={{opacity: 0, scale: 0.5}}
+          exit={{opacity: 0}}
+      >
+        <Head>
+          <title>404 Portfolio</title>
       </Head>
       <h1>
         Error <span> 404 </span>

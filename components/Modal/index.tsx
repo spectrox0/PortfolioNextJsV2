@@ -133,8 +133,6 @@ const ModalStyle = styled.div<PropModal>`
   -ms-transform: translate3d(0, 0, 0);
   transform: translateX(${props => (props.active ? 0 : 100)}%);
   transition: transform ease-in-out 0.4s;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   z-index: 20;
   background: rgba(10, 10, 10, 0.7);
   position: fixed;
@@ -202,7 +200,6 @@ const ModalStyle = styled.div<PropModal>`
         transition: all .3s ease-in-out;
         &.active {
           height:100%;
-          box-shadow:  ${primaryColor} 0 0 5px;
           border-color: ${primaryColor} ;
           opacity:1;
         }
