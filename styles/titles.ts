@@ -23,7 +23,6 @@ export const Title = styled.h1<PropsTitleH1>`
     .word2 {
       display: inline-block;
       font-weight: 700;
-      text-shadow: 0 0 3px ${primaryColor};
       color: ${primaryColor};
     }
    .shadow {
@@ -77,7 +76,6 @@ export const Subtitle = styled.h2<PropsTitleH2>`
     .word2 {
       display: inline-block;
       font-weight: 700;
-      text-shadow: 0 0 3px ${primaryColor};
       color: ${primaryColor};
     }
    .shadow {
