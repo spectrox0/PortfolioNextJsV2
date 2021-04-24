@@ -1,5 +1,5 @@
 import React from 'react'
-import HomeHi from '../components/Home'
+import {HomeTemplate} from '@/templates/Home'
 import Head from 'next/head'
 const Home: React.FC = () => {
   return (
@@ -7,7 +7,7 @@ const Home: React.FC = () => {
       <Head>
         <title>Portfolio Alejandro Velazco</title>
       </Head>
-      <HomeHi />
+      <HomeTemplate />
     </>
   )
 }

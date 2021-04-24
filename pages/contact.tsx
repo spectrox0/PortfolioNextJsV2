@@ -1,6 +1,6 @@
 import React from 'react'
-import Contact from '../components/Contact-me'
 import Head from 'next/head'
+import {ContactTemplate} from "../components/templates/Contact";
 
 const ContactMe: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const ContactMe: React.FC = () => {
       <Head>
         <title>Contact Alejandro Velazco</title>
       </Head>
-      <Contact />
+      <ContactTemplate />
     </>
   )
 }

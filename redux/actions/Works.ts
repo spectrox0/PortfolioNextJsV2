@@ -1,16 +1,17 @@
-import { GET_WORKS, SUCCESS_GET_WORKS, FAILURE_GET_WORKS } from '../actionTypes'
-import { db } from '../../firebase.config'
+import {FAILURE_GET_WORKS, GET_WORKS, SUCCESS_GET_WORKS} from '../actionTypes'
+import {db} from '../../firebase.config'
+
 export const getData = (payload = {}) => ({
   type: GET_WORKS,
   ...payload,
 })
 
-export const failureGetData = (payload ={}) => ({
+export const failureGetData = (payload = {}) => ({
   type: FAILURE_GET_WORKS,
   ...payload,
 })
 
-export const successGetData = (payload: object = {}) => ({
+export const successGetData = (payload = {}) => ({
   type: SUCCESS_GET_WORKS,
   ...payload,
 })

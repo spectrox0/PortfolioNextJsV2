@@ -16,7 +16,7 @@ import {Certificate}   from "../models/Certificates"
 
 interface State {
     work?: Work,
-    loadingWorks: boolean,
+    loading: boolean,
     errorWorks: boolean,
     isOpen: false,
     works: Work[]
@@ -25,7 +25,7 @@ interface State {
 
 const initialState: State = {
     work: undefined,
-    loadingWorks: false,
+    loading: false,
     errorWorks: false,
     isOpen: false,
     works: [],
@@ -54,7 +54,7 @@ const reducer = (state: State & any = initialState, action: AnyAction) => {
         case GET_WORKS: {
             return {
                 ...state,
-                loadingWorks: true,
+                loading: true,
             }
         }
         case SUCCESS_GET_WORKS: {
@@ -62,14 +62,13 @@ const reducer = (state: State & any = initialState, action: AnyAction) => {
             return {
                 ...state,
                 ...data,
-                loadingWorks: false,
+                loading: false,
             }
         }
         case FAILURE_GET_WORKS: {
             return {
                 ...state,
-
-                loadingWorks: false,
+                loading: false,
             }
         }
         default:

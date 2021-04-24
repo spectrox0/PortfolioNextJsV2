@@ -1,16 +1,15 @@
 import React from 'react'
 import Head from 'next/head'
-import Works from '../components/Works'
-import Modal from '../components/Modal'
+import {Modal} from '@/organism/Modal/Work'
+import {WorksTemplate} from "../components/templates/Works";
 import {CloudinaryContext} from 'cloudinary-react'
-import Loading from '../components/Loading'
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchData} from '../redux/actions/Works'
-import {AnimatePresence} from 'framer-motion'
+import {cloudName} from "../utils/config";
 
 const WorksPage: React.FC = () => {
     const dispatch = useDispatch()
-    const {works, loadingWorks} = useSelector(state => ({
+    const {works} = useSelector(state => ({
         ...state,
     }))
 
@@ -22,12 +21,11 @@ const WorksPage: React.FC = () => {
         }
     }, [])
     return (
-        <CloudinaryContext cloudName="dh4qxznuz">
+        <CloudinaryContext cloudName={cloudName}>
             <Head>
                 <title>Portfolio VeaSystem</title>
             </Head>
-            {works && <Works works={works}/>}
-            <AnimatePresence>{loadingWorks && <Loading/>}</AnimatePresence>
+            {works && <WorksTemplate works={works}/>}
             <Modal/>
         </CloudinaryContext>
     )

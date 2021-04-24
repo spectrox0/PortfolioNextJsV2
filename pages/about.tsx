@@ -1,8 +1,8 @@
 import React from 'react'
-import AboutMe from '../components/AboutMe'
+import {AboutMe} from '@/templates/AboutMe'
 import Head from 'next/head'
 
-const  About:React.FC = () =>{
+const About:React.FC = () =>{
   return (
     <>
       <Head>
