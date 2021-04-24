@@ -9,6 +9,8 @@ import {ContainerWorkTemplate} from "./styles";
 import {Box} from "@material-ui/core";
 import {GridWorks} from "../../organism/Grid/Works";
 import {WorkVariant} from "../../../utils/animations/transitionPage";
+import {Container} from '@/atoms/Container'
+import {CustomBox} from "../../atoms/Box";
 
 interface Props {
     works: WorkModel[]
@@ -64,33 +66,35 @@ export const WorksTemplate: React.FC<Props> = ({works}) => {
             transition={{duration: 0.5}}
         >
             <PerfectScrollbar>
-                <div className="container">
-                    <Title variant={'h1'} align={'center'} color={"primary"} fontWeight={700}>
-                        {t({id: 'works'})} <span className='shadow'>  {t({id: 'works'})}</span>
-                    </Title>
-                    <div className="switch">
-                        {ops.map((item, i) => (
-                            <Box key={item} mx={1} my={1} flexGrow={1}>
-                                <Btn
-                                    fullWidth
-                                    className={i == currentOp ? 'active' : ''}
-                                    onClick={() => setCurrentOp(i)}
+                <Container maxWidth={false}>
+                    <CustomBox my={3} py={4}>
+                        <Title variant={'h1'} align={'center'} color={"primary"} fontWeight={700}>
+                            {t({id: 'works'})} <span className='shadow'>  {t({id: 'works'})}</span>
+                        </Title>
+                        <div className="switch">
+                            {ops.map((item, i) => (
+                                <Box key={item} mx={1} my={1} flexGrow={1}>
+                                    <Btn
+                                        fullWidth
+                                        className={i == currentOp ? 'active' : ''}
+                                        onClick={() => setCurrentOp(i)}
                                 >
                                     {item}
                                 </Btn>
                             </Box>
                         ))}
-                    </div>
-                    <GridWorks openModal={openModal} works={works_().slice(0, more ? 20 : 6)}/>
-
-                    {works_().length > 6 && (
-                        <div className="row-button">
-                            <Btn onClick={() => setMore(!more)}>
-                                {!more ? 'View More' : 'Occult'}
-                            </Btn>
                         </div>
-                    )}
-                </div>
+                        <GridWorks openModal={openModal} works={works_().slice(0, more ? 20 : 6)}/>
+
+                        {works_().length > 6 && (
+                            <div className="row-button">
+                                <Btn onClick={() => setMore(!more)}>
+                                    {!more ? 'View More' : 'Occult'}
+                                </Btn>
+                            </div>
+                        )}
+                    </CustomBox>
+                </Container>
             </PerfectScrollbar>
         </ContainerWorkTemplate>
     )

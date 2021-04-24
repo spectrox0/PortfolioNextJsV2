@@ -22,14 +22,16 @@ export const ContainerTemplateAboutMe = styled(motion.section)`
   height: 100%;
   transform: translate3d(0, 0, 0);
   padding: 0;
-
-  p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p { 
+    padding: .5rem 0;
     margin: 0 auto;
     font-style: italic;
     line-height: 1.5em;
     font-size: 1.2em;
     max-width: 992px;
-    padding: 1rem;
   }
 
   .options {
@@ -82,7 +84,7 @@ export const ContainerTemplateAboutMe = styled(motion.section)`
       p {
         text-align: center;
         margin: 0;
-        padding: 0;
+        padding: 1rem 0;
         font-size: 0.9em;
       }
     }
@@ -173,11 +175,9 @@ export const ContainerTemplateAboutMe = styled(motion.section)`
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 30rem;
   overflow: hidden;
-  margin: 1rem;
-  padding: 1rem;
   position: relative;
+  
   transform: translate3d(0, 0, 0);
 
 
@@ -244,7 +244,6 @@ img {
   &.img-real {
     position: absolute;
     opacity: 0;
-    padding: 1rem;
     transition: opacity 1s ease-in-out;
     top: 50%;
     left: 50%;

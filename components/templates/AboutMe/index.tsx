@@ -7,7 +7,9 @@ import {ContainerTemplateAboutMe} from "./styles";
 import {AboutMeVariant} from "../../../utils/animations/transitionPage";
 import {Title} from "@/atoms/Title";
 import {Btn} from '@/atoms/Button'
-import {Box, Typography} from "@material-ui/core";
+import {Box, Grid, Typography} from "@material-ui/core";
+import {CustomBox} from "../../atoms/Box";
+import {Container} from "../../atoms/Container";
 
 export const AboutMe: React.FC = () => {
     const {formatMessage: t} = useIntl()
@@ -29,93 +31,102 @@ export const AboutMe: React.FC = () => {
             variants={AboutMeVariant}
         >
             <PerfectScrollbar>
-                <div className="container container-about">
-                    <div className="row">
-
-                        <>
-                            <div className={`img ${imageLoad ? 'active' : ''}`}>
-                                <div className='img-lazy'>
+                <Container>
+                    <CustomBox my={3}>
+                        <Grid container>
+                            <Grid md={5} xs={12}>
+                                <div className={`img ${imageLoad ? 'active' : ''}`}>
+                                    <div className='img-lazy'>
+                                        <img
+                                            alt="me"
+                                            src={require('images/me.jpg?lqip')}
+                                        />
+                                    </div>
                                     <img
-                                        alt="me"
-                                        src={require('images/me.jpg?lqip')}
+                                        className={'img-real'}
+                                        alt="alejandro velazco"
+                                        ref={imgRef}
+                                        src={require('images/me.jpg?webp')}
+                                        onLoad={() => setImage(true)}
                                     />
                                 </div>
-                                <img
-                                    className={'img-real'}
-                                    alt="alejandro velazco"
-                                    ref={imgRef}
-                                    src={require('images/me.jpg?webp')}
-                                    onLoad={() => setImage(true)}
-                                />
-                            </div>
+                            </Grid>
+                            <Grid xs={12} md={7}>
+                                <div className="biography">
+                                    <Title variant={'h1'} align={'center'}>
+                                        {locale == 'es' ?
+                                            <span className="word2">Acerca de mi </span>
+                                            : <>   <span className="word2">About </span> me </>
+                                        }
+                                    </Title>
+                                    <Typography variant={'body1'}>{t({id: 'description about me'})}</Typography>
 
-                            <div className="biography">
-                                <Title variant={'h1'} align={'center'}>
-                                    {locale == 'es' ?
-                                        <span className="word2">Acerca de mi </span>
-                                        : <>   <span className="word2">About </span> me </>
-                                    }
-                                </Title>
-                                <Typography variant={'body1'}>{t({id: 'description about me'})}</Typography>
-
-                                <div className='list-data'>
-                                    <ul>
-                                        <li>
-                                            <span>{t({id: 'age'})}:</span>
-                                            <span> 23 </span>
-                                        </li>
-                                        <li>
-                                            <span>{t({id: 'residence'})}:</span>
-                                            <span> Caracas, Venezuela </span>
-                                        </li>
-                                        <li>
-                                            <span>Degree:</span>
-                                            <span> Bachelor	 </span>
-                                        </li>
-                                        <li>
-                                            <span> Freelance: </span>
-                                            <span> {t({id: 'available'})} </span>
-                                        </li>
-                                        <li>
-                                            <span> Mail: </span>
-                                            <span>  alejanvelazco2008@hotmail.com </span>
-                                        </li>
-                                    </ul>
-                                    <Box px={3} py={1} flexGrow={1}>
-                                        <a href={"/pdf/Alejandro's Resume (2).pdf"} download>
-                                            <Btn size={'large'}>
-                                                {t({id: 'download my cv'})}
-                                            </Btn>
-                                        </a>
-                                    </Box>
+                                    <div className='list-data'>
+                                        <ul>
+                                            <li>
+                                                <span>{t({id: 'age'})}:</span>
+                                                <span> 23 </span>
+                                            </li>
+                                            <li>
+                                                <span>{t({id: 'residence'})}:</span>
+                                                <span> Caracas, Venezuela </span>
+                                            </li>
+                                            <li>
+                                                <span>Degree:</span>
+                                                <span> Bachelor	 </span>
+                                            </li>
+                                            <li>
+                                                <span> Freelance: </span>
+                                                <span> {t({id: 'available'})} </span>
+                                            </li>
+                                            <li>
+                                                <span> Mail: </span>
+                                                <span>  alejanvelazco2008@hotmail.com </span>
+                                            </li>
+                                        </ul>
+                                        <Box px={3} py={1} flexGrow={1}>
+                                            <a href={"/pdf/Alejandro's Resume (2).pdf"} download>
+                                                <Btn size={'large'}>
+                                                    {t({id: 'download my cv'})}
+                                                </Btn>
+                                            </a>
+                                        </Box>
+                                    </div>
                                 </div>
-                            </div>
-                        </>
-                    </div>
-                    <div className='services-container'>
-                        <Title align={'center'} variant={'h2'}>
-                            {t({id: 'my'})} <span className="word2">{t({id: 'services'})}</span>
-                        </Title>
-                        <div className="services">
-                            <div className="item">
-                                <AiOutlineDesktop/>
-                                <Typography variant={'subtitle1'}>{t({id: 'web development'})} </Typography>
-                                <Typography variant={'body2'}> {t({id: 'web development.description'})}</Typography>
-                            </div>
+                            </Grid>
+                            <Grid xs={12} className='services-container'>
+                                <Title align={'center'} variant={'h2'}>
+                                    {t({id: 'my'})} <span className="word2">{t({id: 'services'})}</span>
+                                </Title>
+                                <div className="services">
+                                    <div className="item">
+                                        <AiOutlineDesktop/>
+                                        <Typography align={'center'}
+                                                    variant={'subtitle1'}>{t({id: 'web development'})} </Typography>
+                                        <Typography
+                                            variant={'body2'}> {t({id: 'web development.description'})}</Typography>
+                                    </div>
 
-                            <div className="item">
-                                <AiOutlineClockCircle/>
-                                <Typography variant={'subtitle1'}>{t({id: 'fast delivery'})} </Typography>
-                                <Typography variant={'body2'}>{t({id: 'fast delivery.description'})} </Typography>
-                            </div>
-                            <div className="item">
-                                <AiOutlineMobile/>
-                                <Typography variant={'subtitle1'}> {t({id: 'app development'})} </Typography>
-                                <Typography variant={'body2'}> {t({id: 'app development.description'})} </Typography>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                    <div className="item">
+                                        <AiOutlineClockCircle/>
+                                        <Typography align={'center'}
+                                                    variant={'subtitle1'}>{t({id: 'fast delivery'})} </Typography>
+                                        <Typography
+                                            variant={'body2'}>{t({id: 'fast delivery.description'})} </Typography>
+                                    </div>
+                                    <div className="item">
+                                        <AiOutlineMobile/>
+                                        <Typography align={'center'}
+                                                    variant={'subtitle1'}> {t({id: 'app development'})} </Typography>
+                                        <Typography
+                                            variant={'body2'}> {t({id: 'app development.description'})} </Typography>
+                                    </div>
+                                </div>
+                            </Grid>
+                        </Grid>
+
+                    </CustomBox>
+                </Container>
 
             </PerfectScrollbar>
         </ContainerTemplateAboutMe>

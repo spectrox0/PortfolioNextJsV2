@@ -9,6 +9,7 @@ import {motion} from "framer-motion";
 import {ContainerContactTemplate} from "./styles";
 import {Grid} from "@material-ui/core";
 import {Container} from "../../atoms/Container";
+import {CustomBox} from "../../atoms/Box";
 
 const ContactVariant = {
     initial: {
@@ -53,17 +54,18 @@ export const ContactTemplate: React.FC = () => {
             variants={ContactVariant}
         >
             <PerfectScroll>
-                <Container className="container">
-                    <Title variant={'h1'} align={'left'}>
-                        {locale === 'es' ? <span className='word2'> Contacto</span> :
-                            <>  <span className='word2'> Contact</span> me </>
-                        }
-                    </Title>
+                <Container maxWidth={'lg'}>
+                    <CustomBox my={3} py={3}>
+                        <Title variant={'h1'} align={'left'}>
+                            {locale === 'es' ? <span className='word2'> Contacto</span> :
+                                <>  <span className='word2'> Contact</span> me </>
+                            }
+                        </Title>
 
-                    <Grid container spacing={3}>
+                        <Grid container spacing={3}>
 
-                        <Grid item xs={12} md={6}>
-                            <Form/>
+                            <Grid item xs={12} md={6}>
+                                <Form/>
                         </Grid>
 
                         <Grid item xs={12} md={6}>
@@ -113,7 +115,8 @@ export const ContactTemplate: React.FC = () => {
                                 </div>
                             </motion.div>
                         </Grid>
-                    </Grid>
+                        </Grid>
+                    </CustomBox>
                 </Container>
             </PerfectScroll>
         </ContainerContactTemplate>

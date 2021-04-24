@@ -11,6 +11,7 @@ import {useIntl} from "react-intl";
 import {ContainerSkillTemplate} from "./styles";
 import {Box, Grid} from "@material-ui/core";
 import {Container} from "../../atoms/Container";
+import {CustomBox} from "../../atoms/Box";
 
 const Skills: React.FC = (): JSX.Element => {
     const {formatMessage: t} = useIntl()
@@ -41,8 +42,8 @@ const Skills: React.FC = (): JSX.Element => {
             transition={{duration: 0.5}}
         >
             <PerfectScroll>
-                <Container maxWidth={'xl'}>
-                    <Box py={4}>
+                <Container maxWidth={'lg'}>
+                    <CustomBox my={3} py={4}>
                         <Box mb={2}>
                             <Title variant={'h1'} align={'left'}>
                                 {t({id: 'my'})} <span className='word2'> {t({id: 'skills'})}</span>
@@ -81,7 +82,7 @@ const Skills: React.FC = (): JSX.Element => {
                                 </Box>
                             </Grid>
                         </Grid>
-                    </Box>
+                    </CustomBox>
                 </Container>
 
             </PerfectScroll>
