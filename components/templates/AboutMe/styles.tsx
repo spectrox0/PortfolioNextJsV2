@@ -22,7 +22,17 @@ export const ContainerTemplateAboutMe = styled(motion.section)`
   height: 100vh;
   transform: translate3d(0, 0, 0);
   padding: 0;
-  p { 
+
+  .inner-view {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  p {
     padding: .5rem 0;
     margin: 0 auto;
     font-style: italic;

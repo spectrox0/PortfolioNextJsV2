@@ -6,8 +6,9 @@ export const grayColor = '#bdbdbd'
 export const paletteColor = {
     primaryColor: '#c5cae9',
     secondaryColor: "#bdbdbd",
+
     backgroundColor: "rgba(18,18,18,1)",
-    backgroundColorOpacity: (opacity: number): string => `rgba(18,18,18,${opacity})`,
+    backgroundColorOpacity: (opacity: number): string => `rgba(27, 28, 36,${opacity})`,
     textColor: "#fff",
 }
 export const theme = createMuiTheme({

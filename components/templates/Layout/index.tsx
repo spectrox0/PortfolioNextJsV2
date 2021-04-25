@@ -9,7 +9,7 @@ interface Props {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const bg: string = require('images/bg/bg9.jpg?webp');
+const bg: string = require('images/bg/bg1.jpg?webp');
 
 export const Layout: React.FC<Props> = ({children}) => {
 

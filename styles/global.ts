@@ -100,7 +100,6 @@ export const GlobalStyle = createGlobalStyle`
       border: solid 1px ${paletteColor.primaryColor};
       background-color: transparent;
       width: 10px;
-      box-shadow: inset 0 0 3px ${paletteColor.primaryColor};
     }
 
     &:hover > .ps__thumb-y,

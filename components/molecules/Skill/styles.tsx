@@ -20,14 +20,14 @@ export const ContainerSkill = styled(motion.div)`
     margin-bottom: 0.3rem;
 
     .icon {
-      opacity: 0.5;
+      opacity: 0.3;
       z-index: 0;
-      font-size: 2em;
+      font-size: 1.8em;
       padding-right: 0.2em;
       position: absolute;
       color: ${paletteColor.primaryColor};
-      top: -1rem;
-      left: 90%;
+      bottom: 5%;
+      left: 95%;
       transform: translate3d(-90%, 0, 0);
     }
 

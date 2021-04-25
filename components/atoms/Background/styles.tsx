@@ -25,7 +25,7 @@ export const ContainerBackground = styled.div<Props>`
     width: 100%;
     height: 100%;
     background-color: ${({colorBackdrop}) => colorBackdrop || paletteColor.backgroundColor};
-    opacity: ${({opacityBackdrop}) => opacityBackdrop || 0.5};
+    opacity: ${({opacityBackdrop}) => opacityBackdrop || 0.4};
   }
 `
 

@@ -14,7 +14,7 @@ export const ContainerNavbar = styled.div`
     top: 0;
     left: 0;
     z-index: 10;
-    background-color: rgba(27, 28, 36, .1);
+    background-color: ${paletteColor.backgroundColorOpacity(0.5)};
     color: #fff;
     transition: transform 0.4s linear;
 

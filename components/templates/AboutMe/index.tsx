@@ -33,36 +33,37 @@ export const AboutMe: React.FC = () => {
             exit="exit"
             variants={AboutMeVariant}
         >
-            <PerfectScrollbar>
-                <Container>
-                    <CustomBox my={3}>
-                        <Grid container>
-                            <Grid md={5} xs={12}>
-                                <div className={`img ${imageLoad ? 'active' : ''}`}>
-                                    <div className='img-lazy'>
+            <PerfectScrollbar className={'scrollbar-contain'}>
+                <div className={'inner-view'}>
+                    <Container>
+                        <CustomBox my={3}>
+                            <Grid container>
+                                <Grid md={5} xs={12}>
+                                    <div className={`img ${imageLoad ? 'active' : ''}`}>
+                                        <div className='img-lazy'>
+                                            <img
+                                                alt="me"
+                                                src={require('images/me.jpg?lqip')}
+                                            />
+                                        </div>
                                         <img
-                                            alt="me"
-                                            src={require('images/me.jpg?lqip')}
+                                            className={'img-real'}
+                                            alt="alejandro velazco"
+                                            ref={imgRef}
+                                            src={require('images/me.jpg?webp')}
+                                            onLoad={() => setImage(true)}
                                         />
                                     </div>
-                                    <img
-                                        className={'img-real'}
-                                        alt="alejandro velazco"
-                                        ref={imgRef}
-                                        src={require('images/me.jpg?webp')}
-                                        onLoad={() => setImage(true)}
-                                    />
-                                </div>
-                            </Grid>
-                            <Grid xs={12} md={7}>
-                                <div className="biography">
-                                    <Title variant={'h1'} align={'center'}>
-                                        {locale == 'es' ?
-                                            <span className="word2">Acerca de mi </span>
-                                            : <>   <span className="word2">About </span> me </>
-                                        }
-                                    </Title>
-                                    <Typography variant={'body1'}>{t({id: 'description about me'})}</Typography>
+                                </Grid>
+                                <Grid xs={12} md={7}>
+                                    <div className="biography">
+                                        <Title variant={'h1'} align={'center'}>
+                                            {locale == 'es' ?
+                                                <span className="word2">Acerca de mi </span>
+                                                : <>   <span className="word2">About </span> me </>
+                                            }
+                                        </Title>
+                                        <Typography variant={'body1'}>{t({id: 'description about me'})}</Typography>
 
                                     <div className='list-data'>
                                         <ul>
@@ -126,21 +127,17 @@ export const AboutMe: React.FC = () => {
                                     </div>
                                 </div>
                             </Grid>
-                        </Grid>
-                    </CustomBox>
-
-                    <VisibilitySensor partialVisibility offset={{bottom:200}}>
-
-                        {({isVisible}) =>
-                            <div style={{height:"500px"}}>
-                                <AnimatePresence> {isVisible ?
-                                    <Skills/> : null}     </AnimatePresence></div>
-                        }
-
-                    </VisibilitySensor>
-
-                </Container>
-
+                            </Grid>
+                        </CustomBox>
+                    </Container>
+                </div>
+                <VisibilitySensor partialVisibility offset={{bottom: 200}}>
+                    {({isVisible}) =>
+                        <div className={'inner-view'}>
+                            <AnimatePresence> {isVisible ?
+                                <Skills/> : null}     </AnimatePresence></div>
+                    }
+                </VisibilitySensor>
             </PerfectScrollbar>
         </ContainerTemplateAboutMe>
     )
