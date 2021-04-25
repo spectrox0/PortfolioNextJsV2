@@ -5,10 +5,11 @@ import Head from 'next/head'
 const About:React.FC = () =>{
   return (
     <>
-      <Head>
-        <title>Alejandro Velazco</title>
-      </Head>
-      <AboutMe />
+        <Head>
+            <title>Alejandro Velazco</title>
+        </Head>
+        <AboutMe/>
+
     </>
   )
 }

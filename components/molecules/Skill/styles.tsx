@@ -4,7 +4,7 @@ import {primaryColor} from "../../../helpers/styles";
 import {paletteColor} from "../../../styles/variables";
 
 export const ContainerSkill = styled(motion.div)`
-  padding: 1em;
+  padding: 1.5em 1em;
   position: relative;
   opacity: 0;
 
@@ -22,7 +22,7 @@ export const ContainerSkill = styled(motion.div)`
     .icon {
       opacity: 0.5;
       z-index: 0;
-      font-size: 4em;
+      font-size: 2em;
       padding-right: 0.2em;
       position: absolute;
       color: ${paletteColor.primaryColor};

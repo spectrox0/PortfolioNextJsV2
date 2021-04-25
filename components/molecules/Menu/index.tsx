@@ -31,11 +31,7 @@ export const Menu: FC <Props>= ({callback}) => {
             name: t({id:'about me'}),
             link: '/about',
         },
-        {
-            icon: <RiEqualizerLine size="1.9em"/>,
-            name: t({id:'skills'}),
-            link: '/skills',
-        },
+
         {
             icon: <AiOutlineAppstore size="2em"/>,
             name: t({id:'works'}),

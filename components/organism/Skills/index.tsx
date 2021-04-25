@@ -1,7 +1,5 @@
 import React from 'react'
 import {Skill} from '@/molecules/Skill'
-
-import PerfectScroll from 'react-perfect-scrollbar'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import {Title} from '@/atoms/Title'
@@ -10,7 +8,6 @@ import {ops, skills} from '../../../helpers/constants'
 import {useIntl} from "react-intl";
 import {ContainerSkillTemplate} from "./styles";
 import {Box, Grid} from "@material-ui/core";
-import {Container} from "../../atoms/Container";
 import {CustomBox} from "../../atoms/Box";
 
 const Skills: React.FC = (): JSX.Element => {
@@ -19,9 +16,11 @@ const Skills: React.FC = (): JSX.Element => {
     const SkillVariant = {
         initial: {
             opacity: 0,
+            y: 40
         },
         enter: {
             opacity: 1,
+            y:0,
             transition: {
                 duration: 0.4,
                 ease: [0.48, 0.15, 0.25, 0.96],
@@ -41,8 +40,6 @@ const Skills: React.FC = (): JSX.Element => {
             variants={SkillVariant}
             transition={{duration: 0.5}}
         >
-            <PerfectScroll>
-                <Container maxWidth={'lg'}>
                     <CustomBox my={3} py={4}>
                         <Box mb={2}>
                             <Title variant={'h1'} align={'left'}>
@@ -83,9 +80,6 @@ const Skills: React.FC = (): JSX.Element => {
                             </Grid>
                         </Grid>
                     </CustomBox>
-                </Container>
-
-            </PerfectScroll>
         </ContainerSkillTemplate>
     )
 }

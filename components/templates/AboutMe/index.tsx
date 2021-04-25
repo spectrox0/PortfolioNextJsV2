@@ -10,6 +10,9 @@ import {Btn} from '@/atoms/Button'
 import {Box, Grid, Typography} from "@material-ui/core";
 import {CustomBox} from "../../atoms/Box";
 import {Container} from "../../atoms/Container";
+import Skills from "@/organism/Skills";
+import VisibilitySensor from "react-visibility-sensor";
+import {AnimatePresence} from "framer-motion";
 
 export const AboutMe: React.FC = () => {
     const {formatMessage: t} = useIntl()
@@ -124,8 +127,18 @@ export const AboutMe: React.FC = () => {
                                 </div>
                             </Grid>
                         </Grid>
-
                     </CustomBox>
+
+                    <VisibilitySensor partialVisibility offset={{bottom:200}}>
+
+                        {({isVisible}) =>
+                            <div style={{height:"500px"}}>
+                                <AnimatePresence> {isVisible ?
+                                    <Skills/> : null}     </AnimatePresence></div>
+                        }
+
+                    </VisibilitySensor>
+
                 </Container>
 
             </PerfectScrollbar>

@@ -15,16 +15,13 @@ const InputAnimationImg = keyframes`
 export const ContainerTemplateAboutMe = styled(motion.section)`
   color: #fff;
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 6;
-  height: 100%;
+  height: 100vh;
   transform: translate3d(0, 0, 0);
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   p { 
     padding: .5rem 0;
     margin: 0 auto;
