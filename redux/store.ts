@@ -1,18 +1,11 @@
-import { useMemo } from 'react'
-import { createStore, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
+import {useMemo} from 'react'
+import {AnyAction, applyMiddleware, createStore} from 'redux'
+import {composeWithDevTools} from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 
-import {
-    OPEN_WORK,
-    CLOSE_WORK,
-    GET_WORKS,
-    SUCCESS_GET_WORKS,
-    FAILURE_GET_WORKS,
-} from './actionTypes'
-import { AnyAction } from 'redux'
+import {CLOSE_WORK, FAILURE_GET_WORKS, GET_WORKS, OPEN_WORK, SET_LOAD, SUCCESS_GET_WORKS,} from './actionTypes'
 import Work from '../models/Work'
-import {Certificate}   from "../models/Certificates"
+import {Certificate} from "../models/Certificates"
 
 interface State {
     work?: Work,
@@ -55,6 +48,12 @@ const reducer = (state: State & any = initialState, action: AnyAction) => {
             return {
                 ...state,
                 loading: true,
+            }
+        }
+        case SET_LOAD: {
+            return {
+                ...state,
+                ...action.payload
             }
         }
         case SUCCESS_GET_WORKS: {
