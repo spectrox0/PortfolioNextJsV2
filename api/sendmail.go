@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"net/http"
 	"net/smtp"
+	"golang.org/x/oauth2"
+	"golang.org/x/oauth2/google"
 	"os"
 )
 
@@ -14,6 +16,17 @@ type email struct {
 	subject string
 	message string
 }
+
+var (
+	oauthConfGl = &oauth2.Config{
+		ClientID:     "",
+		ClientSecret: "",
+		RedirectURL:  "https://developers.google.com/oauthplayground"",
+		Scopes:       []string{"https://www.googleapis.com/auth/userinfo.email"},
+		Endpoint:     google.Endpoint,
+	}
+	oauthStateStringGl = ""
+)
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 	decoder := json.NewDecoder(r.Body)
