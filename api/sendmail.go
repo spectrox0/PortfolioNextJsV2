@@ -17,16 +17,16 @@ type email struct {
 	message string
 }
 
-var (
-	oauthConfGl = &oauth2.Config{
-		ClientID:     "",
-		ClientSecret: "",
-		RedirectURL:  "https://developers.google.com/oauthplayground"",
-		Scopes:       []string{"https://www.googleapis.com/auth/userinfo.email"},
-		Endpoint:     google.Endpoint,
-	}
-	oauthStateStringGl = ""
-)
+//var (
+//	oauthConfGl = &oauth2.Config{
+//		ClientID:     "",
+//		ClientSecret: "",
+//		RedirectURL:  "https://developers.google.com/oauthplayground"",
+//		Scopes:       []string{"https://www.googleapis.com/auth/userinfo.email"},
+//		Endpoint:     google.Endpoint,
+//	}
+//	oauthStateStringGl = ""
+//)
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 	decoder := json.NewDecoder(r.Body)
