@@ -27,7 +27,7 @@ export const ContainerSpinner = styled.div`
     position: relative;
     height: 4rem;
     width: 4rem;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
     border-top-color: ${paletteColor.primaryColor};
     border-bottom-color: ${paletteColor.primaryColor}
     background-clip: padding-box;
