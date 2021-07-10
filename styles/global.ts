@@ -49,16 +49,20 @@ export const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
     }
 
-    @media (max-width: 600px) {
-      font-size: .75rem;
-    }
-    @media (max-width: 768px) {
-      font-size: .8rem;
-    }
+   
+    
 
     @media (max-width: 992px) {
-      font-size: .9rem;
+      font-size: .9rem !important;
     }
+    @media (max-width: 768px) {
+      font-size: .8rem !important;
+    }
+    
+    @media (max-width: 600px) {
+      font-size: .75rem !important;
+    }
+    
   }
 
   button,
@@ -98,7 +102,7 @@ export const GlobalStyle = createGlobalStyle`
   .ps__rail-y {
     .ps__thumb-y {
       border: solid 1px ${paletteColor.primaryColor};
-      background-color: transparent;
+      background-color:  ${paletteColor.transparentPrimaryColor(0.3)};
       width: 10px;
     }
 
@@ -106,7 +110,7 @@ export const GlobalStyle = createGlobalStyle`
     &:focus > .ps__thumb-y,
     &.ps--clicking .ps__thumb-y {
       border: solid 1px ${paletteColor.primaryColor};
-      background-color: transparent;
+      background-color: ${paletteColor.transparentPrimaryColor(0.4)};
       width: 10px;
     }
   }

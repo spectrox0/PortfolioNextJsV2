@@ -66,9 +66,11 @@ export const ContainerTemplateAboutMe = styled(motion.section)`
   .services {
     display: flex;
     flex-wrap: wrap;
+
     .item {
       display: flex;
       flex: 1;
+      border-radius: 16px;
       margin: .5rem;
       background-color: rgba(27, 28, 36, .1);
       border: solid 1px rgba(255, 255, 255, 0.5);
@@ -111,7 +113,7 @@ export const ContainerTemplateAboutMe = styled(motion.section)`
     color: #fff;
     text-transform: capitalize;
   }
-  
+
 }
 
 .list-data {
@@ -158,6 +160,7 @@ export const ContainerTemplateAboutMe = styled(motion.section)`
 
       span {
         text-transform: capitalize;
+
         &:first-child {
           font-weight: 600;
           margin-right: 1rem;
@@ -184,7 +187,7 @@ export const ContainerTemplateAboutMe = styled(motion.section)`
   width: 100%;
   overflow: hidden;
   position: relative;
-  
+
   transform: translate3d(0, 0, 0);
 
 
@@ -268,8 +271,7 @@ img {
   align-items: center;
   justify-content: center;
   height: auto;
-  min-width: 20rem;
-  padding: 1rem;
+  padding: 1rem 0;
 
 }
 `

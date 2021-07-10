@@ -16,9 +16,9 @@ export const paramsTsParticles: IParticlesParams = {
         "number": {
             density: {
                 enable: false,
-                value_area: 200
+                value_area: 100
             },
-            "value": 20
+            "value": 10
         },
         "size": {
             random: true,

@@ -7,7 +7,7 @@ export const ContainerLoadingScreen = styled(motion.div)`
   top: 0;
   left: 0;
   z-index: 10;
-  background: ${paletteColor.backgroundColorOpacity(0.3)};
+  background: ${paletteColor.backgroundColorOpacity(0.8)};
   display: flex;
   width: 100%;
   height: 100%;

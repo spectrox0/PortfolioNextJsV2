@@ -6,7 +6,7 @@ export const grayColor = '#bdbdbd'
 export const paletteColor = {
     primaryColor: '#c5cae9',
     secondaryColor: "#bdbdbd",
-
+    transparentPrimaryColor: (opacity: number):string => `rgba(197, 202, 233,${opacity})`,
     backgroundColor: "rgba(18,18,18,1)",
     backgroundColorOpacity: (opacity: number): string => `rgba(27, 28, 36,${opacity})`,
     textColor: "#fff",
@@ -27,6 +27,9 @@ export const theme = createMuiTheme({
         h1: {
             fontSize: '2.3em',
             fontWeight: 300,
+        },
+        button: {
+            fontSize: '1em',
         },
         h2: {
             fontSize: '2.1em',

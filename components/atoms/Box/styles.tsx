@@ -5,7 +5,7 @@ import {paletteColor} from "../../../styles/variables";
 export const ContainerBox = styled(Box)`
   transform: translate3d(0, 0, 0);
   background-color: ${paletteColor.backgroundColorOpacity(0.6)};
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
   width: 100% ;
   position: relative;
