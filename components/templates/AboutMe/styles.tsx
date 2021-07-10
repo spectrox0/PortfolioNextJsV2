@@ -72,6 +72,8 @@ export const ContainerTemplateAboutMe = styled(motion.section)`
       flex: 1;
       border-radius: 16px;
       margin: .5rem;
+      min-width: 10rem;
+      max-width: 100%;
       background-color: rgba(27, 28, 36, .1);
       border: solid 1px rgba(255, 255, 255, 0.5);
       flex-direction: column;
