@@ -76,9 +76,7 @@ export const ContactTemplate: React.FC = () => {
                                 variants={DataContactVariant}
                             >
                                 <div className="direct-contact">
-                <span>
-                  <MdPhone/> +58 4241309058
-                </span>
+             
                                     <span>
                   <MdMail/> alejanvelazco2008@hotmail.com
                 </span>
