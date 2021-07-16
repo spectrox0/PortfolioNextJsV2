@@ -7,14 +7,14 @@ const OAuth2 = google.auth.OAuth2
 // send mail with defined transport object
 
 const oauth2Client = new OAuth2(
-    '83532624923-7a9blokbrmt4fibkl9bvormufs3ohcc5.apps.googleusercontent.com',
-    'T2LaJaVlvC-ojQHishdzm9Wm', // Client Secret
+     process.env.CLIENT_ID,
+     process.env.CLIENT_SECRET, // Client Secret
     'https://developers.google.com/oauthplayground' // Redirect URL
 )
 
 oauth2Client.setCredentials({
     refresh_token:
-        '1//04qrrHXiPfWKDCgYIARAAGAQSNwF-L9IrAb3BCaOAalKQnJWAOM00_x_fGCo2kM70xIgLNd3fKBZZA7SGgvqouS6rKAMaXkG-wJ8',
+        process.env.REFRESH_TOKEN,
 })
 const accessToken = oauth2Client.getAccessToken()
 interface Payload {
@@ -40,10 +40,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                 type: 'OAuth2',
                 user: 'alejandro.velazco@correo.unimet.edu.ve',
                 clientId:
-                    '83532624923-7a9blokbrmt4fibkl9bvormufs3ohcc5.apps.googleusercontent.com',
-                clientSecret: 'T2LaJaVlvC-ojQHishdzm9Wm',
+                process.env.CLIENT_ID,
+                clientSecret:  process.env.CLIENT_SECRET,
                 refreshToken:
-                    '1//04qrrHXiPfWKDCgYIARAAGAQSNwF-L9IrAb3BCaOAalKQnJWAOM00_x_fGCo2kM70xIgLNd3fKBZZA7SGgvqouS6rKAMaXkG-wJ8',
+                    process.env.REFRESH_TOKEN,
                 accessToken: accessToken, // generated ethereal user
             },
         })
