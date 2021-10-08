@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {
     FaAngular,
-    FaBootstrap,
+    FaBootstrap, FaDocker,
     FaFacebook,
     FaGithub,
     FaInstagram,
@@ -19,20 +19,20 @@ import {
 } from 'react-icons/fa'
 import {AiOutlinePhone} from 'react-icons/ai'
 import {DiCss3, DiDjango, DiFirebase, DiMongodb, DiMysql} from 'react-icons/di'
-import {GrGraphQl} from 'react-icons/gr'
+import {GrGolang, GrGraphQl} from 'react-icons/gr'
 import {
     SiAdobeillustrator,
     SiAdobephotoshop,
     SiAdobexd,
     SiAnaconda,
     SiFigma,
-    SiFlask,
+    SiFlask, SiGoland,
     SiKeras,
-    SiNextDotJs,
-    SiNuxtDotJs,
+    SiNextdotjs,
+    SiNuxtdotjs,
     SiPytorch,
     SiSap,
-    SiSocketDotIo,
+    SiSocketdotio,
     SiTensorflow,
     SiTypescript
 } from 'react-icons/si'
@@ -53,6 +53,7 @@ export const Icons = {
     'linkedin': (props ?: Props): JSX.Element => <FaLinkedin {...props}/>,
     'vue': (props ?: Props): JSX.Element => <FaVuejs {...props}/>,
     'react': (props ?: Props): JSX.Element => <FaReact {...props}/>,
+    'go': (props ?: Props): JSX.Element => <SiGoland {...props}/>,
     'react native': (props ?: Props): JSX.Element => <FaReact {...props}/>,
     'angular': (props ?: Props): JSX.Element => <FaAngular {...props}/>,
     'bootstrap': (props ?: Props): JSX.Element => <FaBootstrap {...props}/>,
@@ -71,13 +72,14 @@ export const Icons = {
     'graphql': (props ?: Props): JSX.Element => <GrGraphQl {...props}/>,
     'anaconda': (props ?: Props): JSX.Element => <SiAnaconda {...props}/>,
     'flask': (props ?: Props): JSX.Element => <SiFlask {...props}/>,
-    'socket.io': (props ?: Props): JSX.Element => <SiSocketDotIo {...props}/>,
+    'docker':  (props ?: Props): JSX.Element => <FaDocker {...props}/>,
+    'socket.io': (props ?: Props): JSX.Element => <SiSocketdotio {...props}/>,
     'tensorflow': (props ?: Props): JSX.Element => <SiTensorflow{...props}/>,
     'pytorch': (props ?: Props): JSX.Element => <SiPytorch {...props}/>,
     'typescript': (props ?: Props): JSX.Element => <SiTypescript {...props}/>,
     'keras': (props ?: Props): JSX.Element => <SiKeras {...props}/>,
-    'next': (props ?: Props): JSX.Element => <SiNextDotJs {...props}/>,
-    'nuxt': (props ?: Props): JSX.Element => <SiNuxtDotJs {...props}/>,
+    'next': (props ?: Props): JSX.Element => <SiNextdotjs{...props}/>,
+    'nuxt': (props ?: Props): JSX.Element => <SiNuxtdotjs{...props}/>,
     'pandas': (props ?: Props): JSX.Element => <GiArtificialIntelligence {...props}/>,
     'figma': (props ?: Props): JSX.Element => <SiFigma {...props}/>,
     'adobe xd': (props ?: Props): JSX.Element => <SiAdobexd {...props}/>,

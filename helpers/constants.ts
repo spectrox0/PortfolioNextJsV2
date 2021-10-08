@@ -31,6 +31,11 @@ export const skills: skill[] = [
         categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES']
     },
     {
+        name: 'Docker',
+        progress: 40,
+        categories: ['LANGUAGES']
+    },
+    {
         name: 'Next',
         progress: 80,
         categories: ['FRONTEND', 'FRAMEWORKS/LIBRARIES']
@@ -74,6 +79,11 @@ export const skills: skill[] = [
     {
         name: 'Java',
         progress: 50,
+        categories: ['BACKEND', 'LANGUAGES'],
+    },
+    {
+        name: 'Go',
+        progress: 65,
         categories: ['BACKEND', 'LANGUAGES'],
     },
     {
