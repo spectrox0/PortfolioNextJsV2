@@ -19,6 +19,8 @@ export const AboutMe: React.FC = () => {
     const {locale} = useRouter()
     const [imageLoad, setImage] = React.useState<boolean>(false)
     const imgRef = React.useRef<HTMLImageElement>(null)
+    // @ts-ignore
+    const getAge = (birthDate:string) => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
 
     React.useEffect(() => {
         if (imgRef.current && imgRef.current.complete) {
@@ -69,7 +71,7 @@ export const AboutMe: React.FC = () => {
                                         <ul>
                                             <li>
                                                 <span>{t({id: 'age'})}:</span>
-                                                <span> 23 </span>
+                                                <span> {getAge("1996-03-12")} </span>
                                             </li>
                                             <li>
                                                 <span>{t({id: 'residence'})}:</span>
@@ -89,7 +91,7 @@ export const AboutMe: React.FC = () => {
                                             </li>
                                         </ul>
                                         <Box px={3} py={1} flexGrow={1}>
-                                            <a href={"/pdf/Alejandro's Resume (2).pdf"} download>
+                                            <a href={"/pdf/Alejandro's Resume (3).pdf"} download>
                                                 <Btn size={'large'}>
                                                     {t({id: 'download my cv'})}
                                                 </Btn>
